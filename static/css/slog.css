@@ -14,12 +14,12 @@ html
 
 h1
 {
-    
+    font-family: Poppins-Bold;
 }
 
 h2
 {
-
+    font-family: Poppins-Bold;
 }
 
 h3
@@ -44,7 +44,9 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20em;
+    gap: 18em;
+    padding-left: 10em;
+    padding-right: 10em;
 }
 
 header a
@@ -69,7 +71,7 @@ header .logo p
 {
     font-size: 2em;
     font-family: Poppins-Bold;
-    color: #4D8244;
+    color: #66952E;
 }
 
 header nav ul
@@ -89,32 +91,27 @@ header nav ul li a
     font-size: 1.7em;
     color: black;
     position: relative;
+    transition: all 0.5s;
 }
 
-header nav ul li a::before
+header nav ul li a:hover
 {
-    position: absolute;
-    content: '';
-    width: 0%;
-    height: 0.05em;
-    background-color: #4D8244;
-    bottom: 0;
-    transition: all 1s;
+    color: #66952E;
 }
 
-header nav ul li a:hover::before
+header nav ul li a.active
 {
-    width: 100%;
+    border-bottom: 0.1em solid #66952E;
 }
 
 header nav ul li a i
 {
-    color: #4D8244;
+    color: #66952E;
 }
 
 header .rezervacija
 {
-    background-color: #4D8244;
+    background-color: #66952E;
     padding: 0.7em 1.5em;
     border-radius: 0.54em;
     display: flex;
@@ -137,8 +134,77 @@ header .rezervacija p
 .prvastranindex
 {
     height: 100vh;
-    background-image: url(../images/testnaslikaoozadje.webp);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/testnaslikaoozadje.webp);
+    background-color: black;
     background-size: cover;
     background-position: 0% 70%;
 }
 
+.prvastranindex .textprvastranindex
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 84%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prvastranindex h1
+{
+    font-size: 7em;
+    color: white;
+}
+
+.prvastranindex h2
+{
+    
+    font-size: 3em;
+    color: #66952E;
+}
+
+.prvastranindex .textprvastranindex .ocena
+{
+    margin-top: 5em;
+}
+
+.prvastranindex .textprvastranindex div
+{
+    margin-left: 0;
+}
+
+.prvastranindex .textprvastranindex .branding
+{
+    opacity: 0;
+}
+
+.prvastranindex .textprvastranindex .krogi
+{
+    display: flex;
+}
+
+.prvastranindex .textprvastranindex .krogi .krog
+{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.prvastranindex .textprvastranindex .krogi .krog:nth-child(1)
+{
+    background-color: rgb(83, 83, 83);
+}
+
+.prvastranindex .textprvastranindex .krogi .krog:nth-child(2)
+{
+    background-color: rgb(177, 177, 177);
+    margin-left: -0.5em;
+}
+
+.prvastranindex .textprvastranindex .krogi .krog:nth-child(3)
+{
+    background-color: rgb(255, 255, 255);
+    margin-left: -0.5em;
+}
