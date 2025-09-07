@@ -31,3 +31,51 @@ p
 {
 
 }
+
+header
+{
+    background-color: white;
+    padding: 3em 0em 3em 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20em;
+}
+
+header .logo p
+{
+    font-size: 2em;
+    font-family: Poppins-Bold;
+}
+
+header nav ul
+{
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+header nav ul li
+{
+    list-style: none;
+}
+
+header nav ul li a
+{
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+header nav ul li a i
+{
+    color: black;
+}
+
+.prvastranindex
+{
+    height: 100vh;
+    background-image: url(../images/testnaslikaoozadje.webp);
+    background-size: cover;
+    background-position: 0% 70%;
+}
+
