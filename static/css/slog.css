@@ -32,6 +32,11 @@ p
 
 }
 
+a
+{
+
+}
+
 header
 {
     background-color: white;
@@ -42,10 +47,29 @@ header
     gap: 20em;
 }
 
+header a
+{
+    text-decoration: none;
+}
+
+header .logo img
+{
+    width: 5em;
+}
+
+header .logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
 header .logo p
 {
     font-size: 2em;
     font-family: Poppins-Bold;
+    color: #4D8244;
 }
 
 header nav ul
@@ -62,13 +86,52 @@ header nav ul li
 
 header nav ul li a
 {
-    font-size: 1.5em;
-    text-decoration: none;
+    font-size: 1.7em;
+    color: black;
+    position: relative;
+}
+
+header nav ul li a::before
+{
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 0.05em;
+    background-color: #4D8244;
+    bottom: 0;
+    transition: all 1s;
+}
+
+header nav ul li a:hover::before
+{
+    width: 100%;
 }
 
 header nav ul li a i
 {
-    color: black;
+    color: #4D8244;
+}
+
+header .rezervacija
+{
+    background-color: #4D8244;
+    padding: 0.7em 1.5em;
+    border-radius: 0.54em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+header .rezervacija i
+{
+    color: white;
+    font-size: 1.7em;
+}
+
+header .rezervacija p
+{
+    color: white;
+    font-size: 1.5em;
 }
 
 .prvastranindex
