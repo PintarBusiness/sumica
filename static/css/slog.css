@@ -112,6 +112,12 @@ header .rezervacija
     display: flex;
     align-items: center;
     gap: 1em;
+    transition: all 0.5s;
+}
+
+header .rezervacija:hover
+{
+    background-color: black;
 }
 
 header .rezervacija i
@@ -230,6 +236,22 @@ header .rezervacija p
     align-items: center;
     gap: 1em;
     width: fit-content;
+    transition: 0.5s;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte:hover
+{
+    background-color: white;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte:hover i
+{
+    color: black;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte:hover p
+{
+    color: black;
 }
 
 .prvastranindex .textprvastranindex .kontaktirajte i
