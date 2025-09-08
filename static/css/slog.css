@@ -165,9 +165,14 @@ header .rezervacija p
     margin-top: 7em;
 }
 
-.prvastranindex .textprvastranindex div
+.prvastranindex .textprvastranindex .ocena div
 {
     margin-left: 0;
+}
+
+.prvastranindex .textprvastranindex div a
+{
+    min-width: unset;
 }
 
 .prvastranindex .textprvastranindex .branding
@@ -190,22 +195,22 @@ header .rezervacija p
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(1)
 {
-    background-image: url(/static/images/slikatest.jpg);
+    background-image: url(../images/slikatestrating1.jpg);
     background-size: cover;
 }
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(2)
 {
-    background-image: url(/static/images/slikatest.jpg);
+    background-image: url(../images/slikatestrating2.webp);
     background-size: cover;
-    margin-left: -0.5em;
+    margin-left: -1em;
 }
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(3)
 {
-    background-image: url(/static/images/slikatest.jpg);
+    background-image: url(../images/slikatestrating3.jpeg);
     background-size: cover;
-    margin-left: -0.5em;
+    margin-left: -1em;
 }
 
 .prvastranindex .textprvastranindex .kontaktirajte
