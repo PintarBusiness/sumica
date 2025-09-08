@@ -34,7 +34,7 @@ p
 
 a
 {
-
+    text-decoration: none;
 }
 
 header
@@ -47,11 +47,6 @@ header
     gap: 18em;
     padding-left: 10em;
     padding-right: 10em;
-}
-
-header a
-{
-    text-decoration: none;
 }
 
 header .logo img
@@ -113,7 +108,7 @@ header .rezervacija
 {
     background-color: #66952E;
     padding: 0.7em 1.5em;
-    border-radius: 0.54em;
+    border-radius: 2em;
     display: flex;
     align-items: center;
     gap: 1em;
@@ -138,6 +133,7 @@ header .rezervacija p
     background-color: black;
     background-size: cover;
     background-position: 0% 70%;
+    overflow: hidden;
 }
 
 .prvastranindex .textprvastranindex
@@ -145,7 +141,7 @@ header .rezervacija p
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 84%;
+    height: 100%;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -159,14 +155,14 @@ header .rezervacija p
 
 .prvastranindex h2
 {
-    
+    margin-top: -3em;
     font-size: 3em;
     color: #66952E;
 }
 
 .prvastranindex .textprvastranindex .ocena
 {
-    margin-top: 5em;
+    margin-top: 7em;
 }
 
 .prvastranindex .textprvastranindex div
@@ -194,17 +190,44 @@ header .rezervacija p
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(1)
 {
-    background-color: rgb(83, 83, 83);
+    background-image: url(/static/images/slikatest.jpg);
+    background-size: cover;
 }
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(2)
 {
-    background-color: rgb(177, 177, 177);
+    background-image: url(/static/images/slikatest.jpg);
+    background-size: cover;
     margin-left: -0.5em;
 }
 
 .prvastranindex .textprvastranindex .krogi .krog:nth-child(3)
 {
-    background-color: rgb(255, 255, 255);
+    background-image: url(/static/images/slikatest.jpg);
+    background-size: cover;
     margin-left: -0.5em;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte
+{
+    background-color: #66952E;
+    padding: 0.7em 1.5em;
+    margin-top: 2em;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte i
+{
+    color: white;
+    font-size: 1.7em;
+}
+
+.prvastranindex .textprvastranindex .kontaktirajte p
+{
+    color: white;
+    font-size: 1.5em;
 }
