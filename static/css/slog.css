@@ -24,7 +24,7 @@ h2
 
 h3
 {
-
+    font-family: Poppins-Bold;
 }
 
 p
@@ -51,7 +51,7 @@ header
 
 header .logo img
 {
-    width: 5em;
+    width: 7em;
 }
 
 header .logo
@@ -59,7 +59,7 @@ header .logo
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
 }
 
 header .logo p
@@ -126,10 +126,12 @@ header .rezervacija p
     font-size: 1.5em;
 }
 
+/*Prva stran index*/
+
 .prvastranindex
 {
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/testnaslikaoozadje.webp);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/glavnoozadje.jpg);
     background-color: black;
     background-size: cover;
     background-position: 0% 70%;
@@ -155,7 +157,7 @@ header .rezervacija p
 
 .prvastranindex h2
 {
-    margin-top: -3em;
+    margin-top: -4em;
     font-size: 3em;
     color: #66952E;
 }
@@ -173,6 +175,11 @@ header .rezervacija p
 .prvastranindex .textprvastranindex div a
 {
     min-width: unset;
+}
+
+.prvastranindex .textprvastranindex .ocena div a div
+{
+    padding-right: 0.2em;
 }
 
 .prvastranindex .textprvastranindex .branding
@@ -235,4 +242,40 @@ header .rezervacija p
 {
     color: white;
     font-size: 1.5em;
+}
+
+
+/*Prva stran ostalo*/
+.prvastranostalo
+{
+    height: 60vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/glavnoozadje.jpg);
+    background-color: black;
+    background-size: cover;
+    background-position: 0% 70%;
+    overflow: hidden;
+}
+
+.prvastranostalo .textprvastranostalo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prvastranostalo h1
+{
+    margin-top: -2em;
+    font-size: 7em;
+    color: white;
+}
+
+.prvastranostalo p
+{
+    font-size: 2em;
+    color: #a5a5a5;
 }
