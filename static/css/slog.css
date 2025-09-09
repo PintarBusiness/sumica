@@ -14,7 +14,7 @@ html
 
 h1
 {
-    font-family: Poppins-Bold;
+    font-family: Raleway-Black;
 }
 
 h2
@@ -24,7 +24,9 @@ h2
 
 h3
 {
-    font-family: Poppins-Bold;
+    font-family: Raleway-Black;
+    color: black;
+    font-size: 6em;
 }
 
 p
@@ -241,17 +243,7 @@ header .rezervacija p
 
 .prvastranindex .textprvastranindex .kontaktirajte:hover
 {
-    background-color: white;
-}
-
-.prvastranindex .textprvastranindex .kontaktirajte:hover i
-{
-    color: black;
-}
-
-.prvastranindex .textprvastranindex .kontaktirajte:hover p
-{
-    color: black;
+    background-color: black;
 }
 
 .prvastranindex .textprvastranindex .kontaktirajte i
@@ -264,6 +256,42 @@ header .rezervacija p
 {
     color: white;
     font-size: 1.5em;
+}
+
+/*Druga stran index*/
+.drugastranindex
+{
+    margin-top: 5em;
+    margin-bottom: 5em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.drugastranindex .skatlje
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+.drugastranindex .skatlje .skatlja
+{
+    top: 0;
+    height: 35em;
+    width: 25em;
+    background-color: #66952E;
+}
+
+.drugastranindex .skatlje .skatlja:nth-child(1)
+{
+    margin-top: 10em;
+}
+
+.drugastranindex .skatlje .skatlja:nth-child(3)
+{
+    margin-top: 15em;
 }
 
 
@@ -301,3 +329,5 @@ header .rezervacija p
     font-size: 2em;
     color: #a5a5a5;
 }
+
+
