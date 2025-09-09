@@ -83,7 +83,8 @@
                         <img src="../static/images/pomlad.jpg" alt="">
                     </div>
                     <div class="spodajskatlja">
-                        <h4>POMLAD</h4>
+                        <h5>Pomlad</h5>
+                        <p>Pomlad je idealen čas za sveže začetke in praznovanja na prostem. Naši prostori ponujajo čudovit ambient za rojstne dneve, krste, birme in intimne poroke. S cvetličnimi dekoracijami in pomladnimi meniji poskrbimo za pravo sproščeno vzdušje.</p>
                     </div>
                 </div>
                 <div class="skatlja">
@@ -91,7 +92,8 @@
                         <img src="../static/images/poletje.jpg" alt="">
                     </div>
                     <div class="spodajskatlja">
-                        <h4>POLETJE</h4>
+                        <h5>Poletje</h5>
+                        <p>Poletni meseci so kot nalašč za večje dogodke – od porok na prostem do piknikov, zabav ob zaključku šolskega leta in poslovnih srečanj. Na voljo imamo tudi catering s poletnimi specialitetami, osvežilnimi napitki in lahkimi jedmi, ki bodo navdušili vaše goste.</p>
                     </div>
                 </div>
                 <div class="skatlja">
@@ -99,7 +101,8 @@
                         <img src="../static/images/jesen.jpg" alt="">
                     </div>
                     <div class="spodajskatlja">
-                        <h4>JESEN</h4>
+                        <h5>Jesen</h5>
+                        <p>Jesen prinaša tople barve in okusno sezonsko kulinariko. Organiziramo obletnice, martinovanja, poslovna srečanja in druge dogodke, kjer prevladujejo lokalne dobrote. Prostor okrasimo v jesenskem stilu in ustvarimo prijetno, domačno atmosfero.</p>
                     </div>
                 </div>
                 <div class="skatlja">
@@ -107,12 +110,74 @@
                         <img src="../static/images/zima.jpg" alt="">
                     </div>
                     <div class="spodajskatlja">
-                        <h4>ZIMA</h4>
+                        <h5>Zima</h5>
+                        <p>V zimskem času so naši prostori odlična izbira za božične zabave, novoletna praznovanja in družinska srečanja. Ponujamo bogat praznični catering, tople napitke in dekoracijo, ki ustvari pravo zimsko pravljico. Tudi manjši, intimni dogodki dobijo posebno čarobnost v tem času.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="ozadjeskatlje"></div>
     </div>
+
+    <div class="cetrtastranindex">
+        <div class="cetrtastranindexnotri">
+            <h3>... Športno rekreacijski center ...</h3>
+            <div class="opisindex">
+                <div class="textopisi">
+                    <h4>Prostor za vse vrste praznovanj</h4>
+                    <p>Naš športno rekreacijski center je več kot le prostor za vadbo – je kraj, kjer se srečujejo aktivnost, druženje in praznovanje. Na voljo so sodobno opremljeni prostori za treninge, turnirje in športne dogodke, hkrati pa jih lahko preoblikujemo v idealno okolje za rojstnodnevne zabave, obhajila, poroke ali poslovne prireditve. S svojim prilagodljivim prostorom, odlično akustiko in možnostjo dodatne tehnične opreme zagotavljamo nepozabno doživetje za vas in vaše goste.</p>
+                    <a href="/ponudbe" class="punudbegumb">
+                        <i class="fa-solid fa-message"></i>
+                        <p>Oglejte si ponudbe</p>
+                    </a>
+                </div>
+                <div class="slikeopisi">
+                    <div class="opisislika">
+                        <img src="../static/images/opisindexslika1.jpg" alt="">
+                    </div>
+                    <div class="opisislika">
+                        <img src="../static/images/opisiindexslika2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tretjastranindex">
+        <div class="trakkontejner">
+        <div class="trak" id="trak">
+            <span><i class="fa-solid fa-church"></i> Poroka</span>
+            <span><i class="fa-solid fa-ring"></i> Obhajilo</span>
+            <span><i class="fa-solid fa-baby"></i> Krst</span>
+            <span><i class="fa-solid fa-cake-candles"></i> Rojstni dan</span>
+            <span><i class="fa-solid fa-utensils"></i> Catering</span>
+            <span><i class="fa-solid fa-champagne-glasses"></i> Prestižne večerje</span>
+            <span><i class="fa-solid fa-school"></i> Šolske dejavnosti</span>
+        </div>
+        </div>
+    </div>
+
+    <script>
+    const trak = document.getElementById("trak");
+
+    // Podvoji vse elemente, da se trak lahko vrti neskončno
+    trak.innerHTML += trak.innerHTML;
+
+    let pos = 0;
+    const speed = 1; // hitrost (px na frame)
+
+    function premik() {
+        pos -= speed;
+        if (Math.abs(pos) >= trak.scrollWidth / 2) {
+        pos = 0; // reset ko polovico odvrti
+        }
+        trak.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(premik);
+    }
+
+    premik();
+    </script>
+
+
 </body>
 </html>
