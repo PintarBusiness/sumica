@@ -431,7 +431,7 @@ header .rezervacija p
 .cetrtastranindexnotri
 {
     margin-top: 10em;
-    margin-bottom: 10em;
+    margin-bottom: 25em;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -443,11 +443,6 @@ header .rezervacija p
     justify-content: center;
     gap: 40em;
     margin-top: 10em;
-}
-
-.cetrtastranindexnotri h3
-{
-    text-align: right;
 }
 
 .cetrtastranindexnotri .opisindex .punudbegumb
@@ -494,19 +489,53 @@ header .rezervacija p
     height: 40em;
     width: 30em;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika .opisislikaslika
+{
+    width: 100%;
+    height: 70%;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika .opisislikatext
+{
+    padding: 2em;
+    z-index: 2;
+    background-color: #F1F1F1;
+    height: 30%;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika .opisislikaslika img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -5em;
 }
 
 .cetrtastranindexnotri .opisindex .slikeopisi .opisislika:nth-child(1)
 {
-    z-index: 1;
     position: absolute;
-    margin-top: 10em;
+    margin-top: 25em;
     margin-right: 50em;
+    border-right: 0.5em solid white;
+    border-top: 0.5em solid white;
     animation: premikajena 15s ease-in-out infinite;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika:hover:nth-child(1)
+{
+    z-index: 2;
 }
 
 .cetrtastranindexnotri .opisindex .slikeopisi .opisislika:nth-child(2)
 {
+    border-left: 0.5em solid white;
+    border-bottom: 0.5em solid white;
     animation: premikajdva 15s ease-in-out infinite;
 }
 
@@ -522,12 +551,6 @@ header .rezervacija p
     0%   { transform: translate(0, 0); }
     50%  { transform: translate(-2em, 0.5em); }
     100% { transform: translate(0, 0); }
-}
-
-.cetrtastranindexnotri .opisindex .slikeopisi .opisislika img
-{
-    width: 100%;
-    height: 100%;
 }
 
 /*Prva stran ostalo*/
