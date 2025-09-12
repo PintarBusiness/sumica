@@ -707,4 +707,16 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     color: #F1F1F1;
 }
 
+/* Rezervacija */
+ .step
+ {
+    display: none;
+}
+.step.active
+{
+    display: block;
+}
 
+.flatpickr-day:not(.flatpickr-disabled) {
+    color: #000 !important;
+}

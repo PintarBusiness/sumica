@@ -13,6 +13,10 @@
     
     <link rel="icon" href="../static/images/ikona/favicon.ico" type="image/x-icon">
     <title>ŠRC Šumica</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
 
 <style>
@@ -57,10 +61,122 @@
             </a>
         </header>
         <div class="textprvastranostalo">
-            <h1>SPOZNAJTE NAS</h1>
+            <h1>REZERVIRAJTE TERMIN</h1>
             <p>Smo malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</p>
         </div>
     </div>
-    
+    <!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacija termina</title>
+    <style>
+        .step { display: none; }
+        .step.active { display: block; }
+    </style>
+</head>
+<body>
+    <h1>Rezervacija termina</h1>
+
+    <form method="POST" action="/rezervacija">
+        <!-- KORAK 1 -->
+        <div id="step1" class="step active">
+            <label for="dogodek">Izberi dogodek:</label>
+            <select id="dogodek" name="dogodek" required>
+                <option value="">-- izberi --</option>
+                <option value="Poroka">Poroka</option>
+                <option value="Obhajilo">Obhajilo</option>
+                <option value="Krst">Krst</option>
+                <option value="Catering">Catering</option>
+                <option value="Prestižne večerje">Prestižne večerje</option>
+                <option value="Šolske dejavnosti">Šolske dejavnosti</option>
+            </select>
+            <br><br>
+
+            <label for="datum">Datum dogodka:</label>
+            <input type="text" id="datum" name="datum" placeholder="Izberi datum">
+            <br><br>
+
+            <label for="ura">Ura prihoda:</label>
+            <input type="time" id="ura" name="ura" required>
+            <br><br>
+
+            <button type="button" onclick="nextStep()">Dalje</button>
+        </div>
+
+        <!-- KORAK 2 -->
+        <div id="step2" class="step">
+            <label for="ime">Ime in priimek:</label>
+            <input type="text" id="ime" name="ime" required>
+            <br><br>
+
+            <label for="telefon">Telefonska številka:</label>
+            <input type="tel" id="telefon" name="telefon" required>
+            <br><br>
+
+            <label for="mail">E-mail naslov:</label>
+            <input type="email" id="mail" name="mail" required>
+            <br><br>
+
+            <label for="osebe">Približno število oseb:</label>
+            <input type="number" id="osebe" name="osebe" min="1" required>
+            <br><br>
+
+            <label for="podrobnosti">Dodatne želje / podrobnosti:</label><br>
+            <textarea id="podrobnosti" name="podrobnosti" rows="4" cols="40"></textarea>
+            <br><br>
+
+            <button type="button" onclick="prevStep()">Nazaj</button>
+            <button type="submit">Potrdi rezervacijo</button>
+        </div>
+    </form>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Rezervirani datumi iz Flask-a
+        const rezervirani = {{ rezervirani|tojson }};
+
+        // Najmanjši datum = danes + 15 dni
+        const minDatum = new Date();
+        minDatum.setDate(minDatum.getDate() + 15);
+
+        // Inicializacija Flatpickr
+        flatpickr("#datum", {
+            minDate: minDatum,
+            disable: rezervirani,       // Zasedeni datumi
+            dateFormat: "Y-m-d",
+            locale: {
+                firstDayOfWeek: 1       // ponedeljek
+            }
+        });
+
+        // Funkcija za prehod na drugi korak
+        function nextStep() {
+            const dogodek = document.getElementById("dogodek").value;
+            const datum = document.getElementById("datum").value;
+            const ura = document.getElementById("ura").value;
+
+            if (!dogodek || !datum || !ura) {
+                alert("Prosimo, izpolnite vsa polja v 1. koraku.");
+                return;
+            }
+
+            document.getElementById("step1").classList.remove("active");
+            document.getElementById("step2").classList.add("active");
+        }
+
+        // Funkcija za vrnitev na prvi korak
+        function prevStep() {
+            document.getElementById("step2").classList.remove("active");
+            document.getElementById("step1").classList.add("active");
+        }
+
+        // Naredimo funkcije globalno, da jih lahko kličeš iz HTML gumbov
+        window.nextStep = nextStep;
+        window.prevStep = prevStep;
+    });
+    </script>
+
 </body>
 </html>
