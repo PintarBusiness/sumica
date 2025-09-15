@@ -79,8 +79,8 @@
 <body>
     <h1>Rezervacija termina</h1>
 
-    <form method="POST" action="/rezervacija">
-        <!-- KORAK 1 -->
+    <form method="POST" action="/rezervacija" onsubmit="return potrdiRezervacijo()">
+
         <div id="step1" class="step active">
             <label for="dogodek">Izberi dogodek:</label>
             <select id="dogodek" name="dogodek" required>
@@ -95,7 +95,7 @@
             <br><br>
 
             <label for="datum">Datum dogodka:</label>
-            <input type="text" id="datum" name="datum" placeholder="Izberi datum">
+            <input type="text" id="datum" name="datum" placeholder="Izberi datum" required>
             <br><br>
 
             <label for="ura">Ura prihoda:</label>
@@ -105,7 +105,7 @@
             <button type="button" onclick="nextStep()">Dalje</button>
         </div>
 
-        <!-- KORAK 2 -->
+
         <div id="step2" class="step">
             <label for="ime">Ime in priimek:</label>
             <input type="text" id="ime" name="ime" required>
@@ -158,7 +158,7 @@
             const ura = document.getElementById("ura").value;
 
             if (!dogodek || !datum || !ura) {
-                alert("Prosimo, izpolnite vsa polja v 1. koraku.");
+                alert("Izpolni vsa polja za vnos");
                 return;
             }
 
@@ -176,6 +176,11 @@
         window.nextStep = nextStep;
         window.prevStep = prevStep;
     });
+
+    function potrdiRezervacijo()
+    {
+        return confirm("Ali ste prepričani, da želite potrditi rezervacijo?");
+    }
     </script>
 
 </body>
