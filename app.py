@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, g, jsonify
+from flask import Flask, render_template, request, g, jsonify, redirect, url_for, request, flash
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import sqlite3
 
 app = Flask(__name__)
@@ -100,6 +101,71 @@ def rezervacija():
     rezervirani = [row[0] for row in cursor.fetchall()]
 
     return render_template("rezervacija.html", rezervirani=rezervirani)
+
+#Tukaj je flask za admin, prijava, odjava
+
+app.secret_key = "super-secret-key"   # zamenjaj z naključnim geslom
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "prijava"  # kamor preusmeri neprijavljene uporabnike
+
+
+# --- Uporabniški model ---
+class User(UserMixin):
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.password = password
+
+
+# --- Demo baza uporabnikov ---
+uporabniki = {
+    "admin": User(id=1, username="admin", password="geslo123")
+}
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    for u in uporabniki.values():
+        if str(u.id) == str(user_id):
+            return u
+    return None
+
+
+# --- Rute ---
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/prijava", methods=["GET", "POST"])
+def prijava():
+    if request.method == "POST":
+        uporabnisko_ime = request.form.get("username")
+        geslo = request.form.get("password")
+
+        user = uporabniki.get(uporabnisko_ime)
+
+        if user and user.password == geslo:
+            login_user(user)
+            flash("Uspešno prijavljen!", "success")
+            return redirect(url_for("admin"))
+        else:
+            flash("Napačno uporabniško ime ali geslo", "danger")
+
+    return render_template("prijava.html")
+
+@app.route("/odjava")
+@login_required
+def odjava():
+    logout_user()
+    flash("Uspešno odjavljen!", "info")
+    return redirect(url_for("index"))
+
+@app.route("/admin")
+@login_required
+def admin():
+    return render_template("admin.html", user=current_user)
 
 
 if __name__ == "__main__":

@@ -44,7 +44,7 @@
             <nav>
                 <ul>
                     <li><a href="/">Domov</a></li>
-                    <li><a href="/onas" class="active">O nas</a></li>
+                    <li><a href="/onas">O nas</a></li>
                     <li><a href="/ponudbe">Ponudbe</a></li>
                     <li><a href="/galerija">Galerija</a></li>
                     <li><a href="/kontakt">Kontakt</a></li>
@@ -57,11 +57,15 @@
             </a>
         </header>
         <div class="textprvastranostalo">
-            <h1>SPOZNAJTE NAS</h1>
+            <h1>ADMIN</h1>
             <p>Smo malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</p>
         </div>
     </div>
 
+    <h1>Admin stran</h1>
+    <p>Pozdravljen, {{ user.username }}!</p>
+    <a href="{{ url_for('odjava') }}">Odjava</a>
+    
     <div class="footer">
         <div class="footernotri">
             <footer>
@@ -101,6 +105,8 @@
         </div>
 
     </div>
-    
+</body>
+</html>
+
 </body>
 </html>

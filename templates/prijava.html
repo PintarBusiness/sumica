@@ -44,7 +44,7 @@
             <nav>
                 <ul>
                     <li><a href="/">Domov</a></li>
-                    <li><a href="/onas" class="active">O nas</a></li>
+                    <li><a href="/onas">O nas</a></li>
                     <li><a href="/ponudbe">Ponudbe</a></li>
                     <li><a href="/galerija">Galerija</a></li>
                     <li><a href="/kontakt">Kontakt</a></li>
@@ -57,11 +57,22 @@
             </a>
         </header>
         <div class="textprvastranostalo">
-            <h1>SPOZNAJTE NAS</h1>
+            <h1>PRIJAVA</h1>
             <p>Smo malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</p>
         </div>
     </div>
 
+    <h1>Prijava</h1>
+    <form method="POST">
+        <label for="username">Uporabniško ime:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Geslo:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Prijava</button>
+    </form>
+    
     <div class="footer">
         <div class="footernotri">
             <footer>
@@ -101,6 +112,8 @@
         </div>
 
     </div>
-    
+</body>
+</html>
+
 </body>
 </html>
