@@ -132,6 +132,17 @@ def load_user(user_id):
             return u
     return None
 
+#izbris rezervacij
+@app.route("/izbrisi_rezervacijo/<int:id>", methods=["POST"])
+@login_required
+def izbrisi_rezervacijo(id):
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("DELETE FROM rezervacije WHERE id = ?", (id,))
+    db.commit()
+    flash("Rezervacija je bila uspešno izbrisana!", "success")
+    return redirect(url_for("admin"))
+
 
 # --- Rute ---
 @app.route("/")
@@ -165,8 +176,11 @@ def odjava():
 @app.route("/admin")
 @login_required
 def admin():
-    return render_template("admin.html", user=current_user)
-
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM rezervacije ORDER BY datum, ura")
+    vse_rezervacije = cursor.fetchall()
+    return render_template("admin.html", user=current_user, rezervacije=vse_rezervacije)
 
 if __name__ == "__main__":
     init_db()

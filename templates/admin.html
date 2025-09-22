@@ -65,6 +65,42 @@
     <h1>Admin stran</h1>
     <p>Pozdravljen, {{ user.username }}!</p>
     <a href="{{ url_for('odjava') }}">Odjava</a>
+
+
+    <h1>Seznam rezervacij</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Dogodek</th>
+            <th>Datum</th>
+            <th>Ura</th>
+            <th>Ime</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Osebe</th>
+            <th>Podrobnosti</th>
+            <th>Akcija</th>
+        </tr>
+        {% for r in rezervacije %}
+        <tr>
+            <td>{{ r[0] }}</td>
+            <td>{{ r[1] }}</td>
+            <td>{{ r[2] }}</td>
+            <td>{{ r[3] }}</td>
+            <td>{{ r[4] }}</td>
+            <td>{{ r[5] }}</td>
+            <td>{{ r[6] }}</td>
+            <td>{{ r[7] }}</td>
+            <td>{{ r[8] }}</td>
+            <td>
+                <form method="POST" action="{{ url_for('izbrisi_rezervacijo', id=r[0]) }}" onsubmit="return confirm('Ali ste prepričani, da želite izbrisati rezervacijo?');">
+                    <button type="submit">Izbriši</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
     
     <div class="footer">
         <div class="footernotri">
