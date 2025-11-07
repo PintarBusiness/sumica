@@ -673,7 +673,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 }
 
 /*Prva stran ostalo*/
-.prvastranostalo
+.prvastranonas
 {
     height: 60vh;
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/glavnoozadje.jpg);
@@ -683,7 +683,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     overflow: hidden;
 }
 
-.prvastranostalo .textprvastranostalo
+.prvastranonas .textprvastranonas
 {
     display: flex;
     flex-direction: column;
@@ -694,17 +694,62 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     margin-right: auto;
 }
 
-.prvastranostalo h1
+.prvastranonas h1
 {
     margin-top: 1.5em;
     font-size: 7em;
     color: white;
 }
 
-.prvastranostalo p
+.prvastranonas p
 {
     font-size: 2em;
     color: #F1F1F1;
+}
+
+/*Duga stran ostalo*/
+.drugastranonas
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+}
+
+.drugastranonas .drugastranonasnotri
+{
+    display: flex;
+    justify-content: center;
+    gap: 20em;
+}
+
+.drugastranonas .drugastranonasnotri .textdrugastraonas h5
+{
+    margin-top: 1em;
+}
+
+.drugastranonas .drugastranonasnotri .textdrugastraonas .socialnaomrezjaonas
+{
+    margin-top: 0.2em;
+    display: flex;
+    gap: 1.5em;
+}
+
+.drugastranonas .drugastranonasnotri .textdrugastraonas .socialnaomrezjaonas a:nth-child(1)
+{
+    font-size: 2.5em;
+    color: #66952E;
+}
+
+.drugastranonas .drugastranonasnotri .textdrugastraonas .socialnaomrezjaonas a:nth-child(2)
+{
+    font-size: 2.8em;
+    color: #66952E;
+}
+
+.drugastranonas .drugastranonasnotri img
+{
+    width: 60em;
 }
 
 /* Rezervacija */
