@@ -673,7 +673,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 }
 
 /*Prva stran ostalo*/
-.prvastranonas
+.prvastranostalo
 {
     height: 60vh;
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/glavnoozadje.jpg);
@@ -683,7 +683,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     overflow: hidden;
 }
 
-.prvastranonas .textprvastranonas
+.prvastranostalo .textprvastranostalo
 {
     display: flex;
     flex-direction: column;
@@ -694,20 +694,20 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     margin-right: auto;
 }
 
-.prvastranonas h1
+.prvastranostalo h1
 {
     margin-top: 1.5em;
     font-size: 7em;
     color: white;
 }
 
-.prvastranonas p
+.prvastranostalo h2
 {
     font-size: 2em;
-    color: #F1F1F1;
+    color: white;
 }
 
-/*Duga stran ostalo*/
+/*Druga stran onas*/
 .drugastranonas
 {
     width: 80%;
@@ -735,6 +735,11 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     gap: 1.5em;
 }
 
+.drugastranonas .drugastranonasnotri .textdrugastraonas .socialnaomrezjaonas a i:hover
+{
+    color: #000;
+}
+
 .drugastranonas .drugastranonasnotri .textdrugastraonas .socialnaomrezjaonas a:nth-child(1)
 {
     font-size: 2.5em;
@@ -750,11 +755,146 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 .drugastranonas .drugastranonasnotri img
 {
     width: 60em;
+    height: 30em;
 }
 
+/*Tretja stran onas*/
+.tretjastranonas
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+}
+
+.ozadjeekipa
+{
+    background-color: #F1F1F1;
+    position: absolute;
+    width: 100%;
+    height: 40em;
+    top: 130em;
+    z-index: -1;
+}
+
+.tretjastranonasnotri h3
+{
+    text-align: center;
+}
+
+.tretjastranonasnotri .skatlaslik
+{
+    margin-top: 10em;
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi
+{
+  width: 30em;
+  height: 40em;
+  position: relative;
+  overflow: hidden;
+  transition: all 3s;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi:nth-child(1)
+{
+    margin-top: 7.5em;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi:nth-child(3)
+{
+    margin-top: 12.5em;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi .opis
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1;
+  padding: 0.5em 1em;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi .opis p
+{
+    color: #66952E;
+    font-weight: bold;
+}
+
+
+/*Četrta stran onas*/
+.cetrtastranonas
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18em;
+}
+
+.cetrtastranonas .cetrtastranonasnotri
+{
+    display: flex;
+    justify-content: center;
+    gap: 20em;
+}
+
+.cetrtastranonas .cetrtastranonasnotri img
+{
+    width: 60em;
+    height: 30em;
+}
+
+.cetrtastranonas .cetrtastranonasnotri .textcetrtastranonas .mustrovagumb
+{
+    margin-top: 2em;
+    background-color: #66952E;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+    transition: all 0.5s;
+}
+
+.cetrtastranonas .cetrtastranonasnotri .textcetrtastranonas .mustrovagumb:hover
+{
+    background-color: black;
+}
+
+.cetrtastranonas .cetrtastranonasnotri .textcetrtastranonas .mustrovagumb i
+{
+    color: white;
+    font-size: 1.7em;
+}
+
+.cetrtastranonas .cetrtastranonasnotri .textcetrtastranonas .mustrovagumb p
+{
+    color: white;
+    font-size: 1.5em;
+    font-family: Poppins-Bold;
+}
+
+
 /* Rezervacija */
- .step
- {
+.step
+{
     display: none;
 }
 .step.active

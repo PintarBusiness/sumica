@@ -35,7 +35,7 @@
     }
 </style>
 <body>
-    <div class="prvastranonas">
+    <div class="prvastranostalo">
         <header>
             <a href="" class="logo">
                 <img src="../static/images/logosumica.png" alt="">
@@ -56,9 +56,9 @@
                 <p>Rezervirajte</p>
             </a>
         </header>
-        <div class="textprvastranonas">
+        <div class="textprvastranostalo">
             <h1>SPOZNAJTE NAS</h1>
-            <p>Smo malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</p>
+            <h2>Malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</h2>
         </div>
     </div>
 
@@ -66,7 +66,7 @@
         <div class="drugastranonasnotri">
             <div class="textdrugastraonas">
                 <h4>Kdo smo?</h4>
-                <p>ŠRC Šumica je prijeten kotiček narave, kjer se sprostitev, rekreacija in druženje združijo v edinstveno izkušnjo. Nahajamo se približno kilometer iz naselja Cirkulane, v mirnem okolju Pristave, obdani z zelenjem in svežim zrakom Haloz. Naš prostor je namenjen vsem, ki si želijo kakovostno preživeti prosti čas – bodisi ob rekreaciji, praznovanju, pikniku ali preprosto v dobri družbi.</p>
+                <p>Smo družina Murko, lastniki ŠRC Šumice, ki je prijeten kotiček narave, kjer se sprostitev, rekreacija in druženje združijo v edinstveno izkušnjo. Nahajamo se približno kilometer iz naselja Cirkulane, v mirnem okolju Pristave, obdani z zelenjem in svežim zrakom Haloz. Naš prostor je namenjen vsem, ki si želijo kakovostno preživeti prosti čas – bodisi ob rekreaciji, praznovanju, pikniku ali preprosto v dobri družbi.</p>
                 <h5>Sledite nam na socialnih morežjih</h5>
                 <div class="socialnaomrezjaonas">
                     <a href=""><i class="fa-brands fa-facebook-f"></i></a>
@@ -74,6 +74,77 @@
                 </div>
             </div>
             <img src="../static/images/skupinskaslika.webp" alt="">
+        </div>
+    </div>
+
+    <div class="ozadjeekipa"></div>
+    <div class="tretjastranonas">
+        <div class="tretjastranonasnotri">
+            <h3>...Naša ekipa...</h3>
+            <div class="skatlaslik">
+                <div class="slikeopisi">
+                    <img src="../static/images/lastnik.jpg" alt="">
+                    <div class="opis">
+                        <h5>Lastnik</h5>
+                        <p>Milan Murko</p>
+                    </div>
+                </div>
+                <div class="slikeopisi">
+                    <img src="../static/images/direktor.jpg" alt="">
+                    <div class="opis">
+                        <h5>Direktor</h5>
+                        <p>Marjan Murko</p>
+                    </div>
+                </div>
+                <div class="slikeopisi">
+                    <img src="../static/images/upravitelj.jpg" alt="">
+                    <div class="opis">
+                        <h5>Upravitelj</h5>
+                        <p>Tadej Murko</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        const kartice = document.querySelectorAll('.skatlaslik .slikeopisi');
+
+        async function animirajKartice()
+        {
+            while (true)
+            {
+                for (let i = 0; i < kartice.length; i++)
+                {
+                    kartice[i].style.transform = 'scale(1.1)';
+
+                    await new Promise(resolve => setTimeout(resolve, 3500));
+
+                    kartice[i].style.transform = 'scale(1)';
+                    
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                }
+
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+
+        animirajKartice();
+
+    </script>
+
+    <div class="cetrtastranonas">
+        <div class="cetrtastranonasnotri">
+            <img src="../static/images/slikamustrovapotnarava.jpg" alt="">
+            <div class="textcetrtastranonas">
+                <h4>Del tematske poti po Halozah</h4>
+                <p>Mustrova pot po Halozah – Ptuj ima zelo slikovito naravno zaledje z mnogimi hribčki in dolinami, ki s svojo naravno lepoto prevzamejo vsakega popotnika. Med takšne kraje, ki popotnika še posebej očarajo, sodijo tudi vinorodne Haloze, ki so ene od sedmih vinorodnih okolišev slovenske vinorodne dežele Podravje. Del te poti smo tudi mi Športno rereacijski center Šumica. Na tej poti imamo vlogo Kontrolne točke s štempljem Mustrove poti.</p>
+                <a href="https://mustrovapot.si/o-mustrovi-poti/" class="mustrovagumb">
+                    <i class="fa-solid fa-person-hiking"></i>
+                    <p>Mustrova pot</p>
+                </a>
+            </div>
         </div>
     </div>
 
