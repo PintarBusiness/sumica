@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, g, jsonify, redirect, url_for, request, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import sqlite3
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 
@@ -102,36 +104,6 @@ def rezervacija():
 
     return render_template("rezervacija.html", rezervirani=rezervirani)
 
-#Tukaj je flask za admin, prijava, odjava
-
-app.secret_key = "super-secret-key"   # zamenjaj z naključnim geslom
-
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = "prijava"  # kamor preusmeri neprijavljene uporabnike
-
-
-# --- Uporabniški model ---
-class User(UserMixin):
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
-
-
-# --- Demo baza uporabnikov ---
-uporabniki = {
-    "admin": User(id=1, username="admin", password="geslo123")
-}
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    for u in uporabniki.values():
-        if str(u.id) == str(user_id):
-            return u
-    return None
-
 #izbris rezervacij
 @app.route("/izbrisi_rezervacijo/<int:id>", methods=["POST"])
 @login_required
@@ -143,14 +115,58 @@ def izbrisi_rezervacijo(id):
     flash("Rezervacija je bila uspešno izbrisana!", "success")
     return redirect(url_for("admin"))
 
-
 # --- Rute ---
 @app.route("/")
 def index():
     return render_template("index.html")
 
+#Tukaj je flask za admin, prijava, odjava
+
+app.secret_key = "nekaj-zelo-tajnega"
+
+login_manager = LoginManager(app)
+login_manager.login_view = "prijava"
+
+# --- Naloži .env ---
+load_dotenv()
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
+
+
+# --- Model uporabnika ---
+class User(UserMixin):
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.password = password
+
+
+# --- Uporabniki iz .env ---
+uporabniki = {
+    ADMIN_USERNAME: User(id=1, username=ADMIN_USERNAME, password=ADMIN_PASSWORD)
+}
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    for u in uporabniki.values():
+        if str(u.id) == str(user_id):
+            return u
+    return None
+
+
+# --- Unauthorized handler (nadomesti privzeto "Please log in") ---
+@login_manager.unauthorized_handler
+def unauthorized_callback():
+    # Samo preusmeri na prijavo brez privzetega sporočila
+    return redirect(url_for("prijava"))
+
+
+# --- Prijava ---
 @app.route("/prijava", methods=["GET", "POST"])
 def prijava():
+    napaka = None
+
     if request.method == "POST":
         uporabnisko_ime = request.form.get("username")
         geslo = request.form.get("password")
@@ -159,20 +175,24 @@ def prijava():
 
         if user and user.password == geslo:
             login_user(user)
-            flash("Uspešno prijavljen!", "success")
+            # odstranjen flash za uspešno prijavo
             return redirect(url_for("admin"))
         else:
-            flash("Napačno uporabniško ime ali geslo", "danger")
+            napaka = "Napačno uporabniško ime ali geslo!"
 
-    return render_template("prijava.html")
+    return render_template("prijava.html", napaka=napaka)
 
+
+# --- Odjava ---
 @app.route("/odjava")
 @login_required
 def odjava():
     logout_user()
-    flash("Uspešno odjavljen!", "info")
+    # odstranjen flash za uspešno odjavo
     return redirect(url_for("index"))
 
+
+# --- Admin ---
 @app.route("/admin")
 @login_required
 def admin():
@@ -181,6 +201,7 @@ def admin():
     cursor.execute("SELECT * FROM rezervacije ORDER BY datum, ura")
     vse_rezervacije = cursor.fetchall()
     return render_template("admin.html", user=current_user, rezervacije=vse_rezervacije)
+
 
 if __name__ == "__main__":
     init_db()

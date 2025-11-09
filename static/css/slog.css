@@ -772,19 +772,19 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     background-color: #F1F1F1;
     position: absolute;
     width: 100%;
-    height: 40em;
-    top: 130em;
+    height: 35em;
+    top: 122em;
     z-index: -1;
 }
 
-.tretjastranonasnotri h3
+.tretjastranonasnotri h4
 {
     text-align: center;
 }
 
 .tretjastranonasnotri .skatlaslik
 {
-    margin-top: 10em;
+    margin-top: 5em;
     display: flex;
     justify-content: center;
     gap: 10em;
@@ -792,11 +792,16 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 
 .tretjastranonasnotri .skatlaslik .slikeopisi
 {
-  width: 30em;
-  height: 40em;
+  width: 25em;
+  height: 35em;
   position: relative;
   overflow: hidden;
-  transition: all 3s;
+  transition: all 0.5s;
+}
+
+.tretjastranonasnotri .skatlaslik .slikeopisi:hover
+{
+    scale: 1.1;
 }
 
 .tretjastranonasnotri .skatlaslik .slikeopisi:nth-child(1)
@@ -844,7 +849,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 18em;
+    margin-top: 15em;
 }
 
 .cetrtastranonas .cetrtastranonasnotri
@@ -889,6 +894,99 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     color: white;
     font-size: 1.5em;
     font-family: Poppins-Bold;
+}
+
+/*Prijava*/
+.prijava
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.prijavanotri
+{
+    width: 28em;
+    background-color: white;
+    border-radius: 1.2em;
+    box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.3);
+    padding: 3em;
+}
+
+.prijavanotri h4
+{
+    color: #66952E;
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.prijava .prijavanotri form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.prijava .prijavanotri p
+{
+    text-align: left;
+    color: black;
+}
+
+.prijava .prijavanotri input
+{
+    padding: 0.8em;
+    border: 0.2em solid #ccc;
+    border-radius: 0.6em;
+    transition: all 0.5s ease;
+    font-size: 1em;
+}
+
+.prijava .prijavanotri input:nth-child(2)
+{
+    margin-bottom: -2em;
+}
+
+.prijava .prijavanotri input:focus
+{
+    border-color: #66952E;
+    box-shadow: 0 0 8px #66952E;
+    outline: none;
+}
+
+.prijava .prijavanotri button
+{
+    all: unset;
+    background-color: #66952E;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    transition: all 0.5s;
+    max-width: fit-content;
+    cursor: pointer;
+}
+
+.prijava .prijavanotri button span
+{
+    color: white;
+    font-size: 1.5em;
+    font-family: Poppins-Bold;
+}
+
+
+.prijava .prijavanotri button:hover
+{
+    background-color: black;
+}
+
+.napacnogeslo
+{
+    color: red !important;
+    margin-bottom: 1em;
 }
 
 

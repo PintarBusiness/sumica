@@ -51,7 +51,7 @@
                     <li><a href="/lokacija"><i class="fa-solid fa-location-dot"></i></a></li>
                 </ul>
             </nav>
-            <a href="" class="rezervacija">
+            <a href="/rezervacija" class="rezervacija">
                 <i class="fa-solid fa-calendar"></i>
                 <p>Rezervirajte</p>
             </a>
@@ -80,7 +80,7 @@
     <div class="ozadjeekipa"></div>
     <div class="tretjastranonas">
         <div class="tretjastranonasnotri">
-            <h3>...Naša ekipa...</h3>
+            <h4>Naša ekipa</h4>
             <div class="skatlaslik">
                 <div class="slikeopisi">
                     <img src="../static/images/lastnik.jpg" alt="">
@@ -106,33 +106,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        
-        const kartice = document.querySelectorAll('.skatlaslik .slikeopisi');
-
-        async function animirajKartice()
-        {
-            while (true)
-            {
-                for (let i = 0; i < kartice.length; i++)
-                {
-                    kartice[i].style.transform = 'scale(1.1)';
-
-                    await new Promise(resolve => setTimeout(resolve, 3500));
-
-                    kartice[i].style.transform = 'scale(1)';
-                    
-                    await new Promise(resolve => setTimeout(resolve, 3000));
-                }
-
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            }
-        }
-
-        animirajKartice();
-
-    </script>
 
     <div class="cetrtastranonas">
         <div class="cetrtastranonasnotri">
