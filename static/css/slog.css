@@ -989,6 +989,112 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     margin-bottom: 1em;
 }
 
+/*Admin*/
+.admin
+{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin h4
+{
+    margin-bottom: 1em;
+    color: #66952E;
+    text-align: center;
+}
+
+.admin .tabelaskrol
+{
+    max-height: 48.5em;
+    overflow-y: auto;
+    width: 95%;
+    border-radius: 1em;
+    box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.2);
+}
+
+.admin .tabelaskrol table
+{
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admin .tabelaskrol th
+{
+    position: sticky;
+    top: 0;
+    background-color: #66952E;
+    color: white;
+    font-size: 1.5em;
+    font-family: Poppins-Bold;
+    z-index: 2;
+}
+
+.admin th,
+.admin td
+{
+    padding: 1em;
+    text-align: left;
+    font-size: 1em;
+    border: solid 0.1em #ccc;
+}
+
+.admin tr:nth-child(even)
+{
+    background-color: #F1F1F1;
+}
+
+.admin tr:hover
+{
+    background-color: #eef6e6;
+}
+
+.admin button
+{
+    all: unset;
+    background-color: #66952E;
+    color: white;
+    font-family: Poppins-Bold;
+    padding: 0.6em 1.2em;
+    border-radius: 1.5em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.4s ease;
+}
+
+.admin button:hover
+{
+    background-color: black;
+}
+
+.admin .odjavagumb
+{
+    color: white;
+    margin-top: 5em;
+    background-color: #66952E;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+    transition: all 0.5s;
+}
+
+.admin .odjavagumb p
+{
+    color: white;
+    font-size: 1.5em;
+    font-family: Poppins-Bold;
+}
+
+.admin .odjavagumb:hover
+{
+    background-color: black;
+}
 
 /* Rezervacija */
 .step
