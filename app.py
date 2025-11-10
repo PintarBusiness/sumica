@@ -4,6 +4,8 @@ import sqlite3
 from dotenv import load_dotenv
 import os
 
+# pip install -r requirements.txt
+
 app = Flask(__name__)
 
 @app.route("/")
