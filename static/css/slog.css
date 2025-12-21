@@ -896,6 +896,109 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     font-family: Poppins-Bold;
 }
 
+/* GALERIJA */
+
+.prvastrangalerija
+{
+    width: 100%;
+    padding: 5em 0;
+}
+
+.prvastrangalerijanotri
+{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.prvastrangalerijanotri .slikabox
+{
+    width: 100%;
+    height: 18em;
+    overflow: hidden;
+}
+
+.prvastrangalerijanotri .slikabox img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    transform: scale(1);
+}
+
+.prvastrangalerijanotri .slikabox img:hover
+{
+    transform: scale(1.08);
+    filter: brightness(0.85);
+}
+
+.galerijalightbox
+{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.galerijalightbox.active
+{
+    display: flex;
+}
+
+.galerijalightbox img
+{
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+}
+
+.galerijazapri
+{
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    font-family: Poppins-Bold;
+}
+
+.galerijagumb
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+    padding: 0 0.5em;
+    user-select: none;
+}
+
+.galerijagumb.levo
+{
+    left: 1em;
+}
+
+.galerijagumb.desno
+{
+    right: 1em;
+}
+
+.galerijagumb:hover,
+.galerijazapri:hover
+{
+    color: #66952E;
+}
+
 /*Prijava*/
 .prijava
 {
@@ -1108,4 +1211,78 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 
 .flatpickr-day:not(.flatpickr-disabled) {
     color: #000 !important;
+}
+
+.prvastranrezervacije form
+{
+    width: 80%;
+    margin: 5em auto;
+    font-family: Poppins;
+}
+
+.prvastranrezervacije form .step
+{
+    background-color: white;
+    padding: 2.5em;
+    border-radius: 1.5em;
+    box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.2);
+}
+
+.prvastranrezervacije form label
+{
+    font-family: Poppins-Bold;
+    color: #333;
+    display: block;
+    margin-bottom: 0.4em;
+}
+
+.prvastranrezervacije form input,
+.prvastranrezervacije form select,
+.prvastranrezervacije form textarea
+{
+    width: 100%;
+    padding: 0.8em 1em;
+    border-radius: 1em;
+    border: 0.1em solid #ccc;
+    font-family: Poppins;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.prvastranrezervacije form input:focus,
+.prvastranrezervacije form select:focus,
+.prvastranrezervacije form textarea:focus
+{
+    outline: none;
+    border-color: #66952E;
+}
+
+.prvastranrezervacije form textarea
+{
+    resize: vertical;
+    min-height: 6em;
+}
+
+.prvastranrezervacije form button
+{
+    all: unset;
+    background-color: #66952E;
+    color: white;
+    font-family: Poppins-Bold;
+    padding: 0.7em 1.6em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.4s ease;
+    margin-right: 1em;
+}
+
+.prvastranrezervacije form button:hover
+{
+    background-color: black;
+}
+
+.prvastranrezervacije form .step button
+{
+    margin-top: 1em;
 }

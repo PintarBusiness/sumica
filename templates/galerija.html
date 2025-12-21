@@ -61,6 +61,139 @@
             <h2>Smo malo podjetje, ki organizira vse od velikih praznovanj, porok, ceteringa in še mnogo drugega</h2>
         </div>
     </div>
+
+    <div class="prvastrangalerija">
+    <div class="prvastrangalerijanotri">
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+        <div class="slikabox"><img src="../static/images/poletje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/pomlad.jpg"></div>
+        <div class="slikabox"><img src="../static/images/jesen.jpg"></div>
+        <div class="slikabox"><img src="../static/images/zima.jpg"></div>
+        <div class="slikabox"><img src="../static/images/glavnoozadje.jpg"></div>
+        <div class="slikabox"><img src="../static/images/slikamustrovapotnarava.jpg"></div>
+    </div>
+</div>
+
+    <div class="galerijalightbox" id="lightbox">
+        <span class="galerijazapri" id="zapri">&times;</span>
+        <span class="galerijagumb levo" id="prej">&#10094;</span>
+        <img id="lightboxslika" src="">
+        <span class="galerijagumb desno" id="naslednja">&#10095;</span>
+    </div>
+
+    <script>
+        const slike = document.querySelectorAll('.prvastrangalerijanotri img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxSlika = document.getElementById('lightboxslika');
+        const zapri = document.getElementById('zapri');
+        const prej = document.getElementById('prej');
+        const naslednja = document.getElementById('naslednja');
+
+        let trenutniIndex = 0;
+
+        slike.forEach((slika, index) => {
+            slika.addEventListener('click', () => {
+                trenutniIndex = index;
+                lightboxSlika.src = slika.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        prej.addEventListener('click', () => {
+            trenutniIndex = (trenutniIndex - 1 + slike.length) % slike.length;
+            lightboxSlika.src = slike[trenutniIndex].src;
+        });
+
+        naslednja.addEventListener('click', () => {
+            trenutniIndex = (trenutniIndex + 1) % slike.length;
+            lightboxSlika.src = slike[trenutniIndex].src;
+        });
+
+        zapri.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox)
+                lightbox.classList.remove('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowLeft') prej.click();
+            if (e.key === 'ArrowRight') naslednja.click();
+        });
+    </script>
+
+    <div class="footer">
+        <div class="footernotri">
+            <footer>
+                <div class="footerskatlje">
+                    <h5>KONTAKTNI PODATKI</h5>
+                    <div class="footertext">
+                        <p>Tadej Murko | Dopolnilna dejavnost</p>
+                        <p>Pristava 40a</p>
+                        <p>2282 Cirkulane</p>
+                        <p><i class="fa-solid fa-phone"></i><span>+386 70 170 562</span></p>
+                        <p><i class="fa-solid fa-envelope"></i>tadej.murko1@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footerskatlje">
+                    <h5>SLEDITE NAM</h5>
+                    <div class="footertext">
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footerskatlje">
+                    <h5>PRAVNE INFORMACIJE</h5>
+                    <div class="footertext">
+                        <a href="">Pogoji poslovanja</a>
+                        <a href="">Piškotki</a>
+                        <a href="">Varnost in zasebnost</a>
+                    </div>
+                </div>
+            </footer>
+            <div class="noga">
+                <p>© 2025 ŠRC Šumica | Vse pravice pridržane</p>
+                <div class="desno">
+                    <a href="mailto:jure.pintar9@gmail.com">Izdelava spletne strani</a>
+                    <a href="/admin">Admin</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
     
 </body>
 </html>
