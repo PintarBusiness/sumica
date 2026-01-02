@@ -3,6 +3,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 import sqlite3
 from dotenv import load_dotenv
 import os
+from flask_mail import Mail, Message
 
 # pip install -r requirements.txt
 
@@ -23,10 +24,6 @@ def ponudbe():
 @app.route("/galerija")
 def galerija():
     return render_template("galerija.html")
-
-@app.route("/kontakt")
-def kontakt():
-    return render_template("kontakt.html")
 
 @app.route("/lokacija")
 def lokacija():
@@ -203,6 +200,47 @@ def admin():
     cursor.execute("SELECT * FROM rezervacije ORDER BY datum, ura")
     vse_rezervacije = cursor.fetchall()
     return render_template("admin.html", user=current_user, rezervacije=vse_rezervacije)
+
+
+# --- konfiguracija maila ---
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # za Gmail
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv("EMAIL_USER")   # tvoj email
+app.config['MAIL_PASSWORD'] = os.getenv("EMAIL_PASS")   # geslo ali App Password
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv("EMAIL_USER")
+
+mail = Mail(app)
+
+@app.route("/kontakt", methods=["GET", "POST"])
+def kontakt():
+    if request.method == "POST":
+        ime = request.form.get("ime")
+        telefon = request.form.get("telefon")
+        mail_uporabnika = request.form.get("mail")
+        sporocilo = request.form.get("sporocilo")
+
+        # sestavimo email
+        msg = Message(
+            subject=f"Kontaktno sporočilo od {ime}",
+            recipients=[os.getenv("EMAIL_USER")],  # tvoj email
+            body=f"Ime in priimek: {ime}\n"
+                 f"Telefon: {telefon}\n"
+                 f"E-mail: {mail_uporabnika}\n\n"
+                 f"Sporočilo:\n{sporocilo}"
+        )
+
+        try:
+            mail.send(msg)
+            flash("Sporočilo je bilo uspešno poslano!", "success")
+        except Exception as e:
+            print(e)
+            flash("Prišlo je do napake pri pošiljanju.", "danger")
+
+        return redirect(url_for("kontakt"))
+
+    return render_template("kontakt.html")
+
 
 
 if __name__ == "__main__":

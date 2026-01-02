@@ -999,6 +999,114 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     color: #66952E;
 }
 
+/* Kontakt */
+.prvastrankontakt
+{
+    display: flex;
+    justify-content: center;
+    padding: 5em 1em;
+}
+
+.prvastrankontaktnotri
+{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.kontaktforma
+{
+    width: 100%;
+    background-color: white;
+    padding: 3em;
+    border-radius: 1em;
+    box-shadow: 0 0.8em 2em rgba(0,0,0,0.1);
+}
+
+.kontaktgrid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+.kontaktlevo,
+.kontaktdesno
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.kontaktforma label
+{
+    font-family: Poppins-Bold;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    font-size: 1.5em;
+}
+
+.kontaktforma input,
+.kontaktforma textarea
+{
+    padding: 0.8em;
+    border-radius: 0.8em;
+    border: 0.08em solid #ccc;
+    font-family: Poppins;
+    font-size: 1.2em;
+    transition: all 0.3s;
+}
+
+.kontaktforma textarea
+{
+    resize: none;
+    min-height: 20em;
+}
+
+.kontaktforma input:focus,
+.kontaktforma textarea:focus
+{
+    outline: none;
+    border-color: black;
+}
+
+.kontaktforma button
+{
+    all: unset;
+}
+
+.kontaktforma button
+{
+    cursor: pointer;
+    margin-top: 2em;
+    background-color: #66952E;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: fit-content;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.kontaktgumb:hover
+{
+    background-color: black;
+}
+
+.kontaktgumb i
+{
+    color: white;
+    font-size: 1.7em;
+}
+
+.kontaktgumb p
+{
+    color: white;
+    font-size: 1.5em;
+    font-family: Poppins-Bold;
+}
+
 /*Prijava*/
 .prijava
 {
@@ -1054,8 +1162,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 
 .prijava .prijavanotri input:focus
 {
-    border-color: #66952E;
-    box-shadow: 0 0 8px #66952E;
+    border-color: black;
     outline: none;
 }
 
