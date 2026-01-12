@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="ŠRC Šumica, Cirkulane, Poroka, Krst, Piknik, Rojstnodnevna zabava, Catering">
+    <meta name="description" content="Najboljša ponudba oddaje prostora za vse vrste dogodkov.">
+    <meta name="author" content="Jure Pintar">
+
+    <link rel="stylesheet" href="../static/css/slog.css">
+    <script src="https://kit.fontawesome.com/f93be84bbb.js" crossorigin="anonymous"></script>
+    
+    <link rel="icon" href="../static/images/ikona/favicon.ico" type="image/x-icon">
+    <title>ŠRC Šumica</title>
+</head>
+
+<style>
+    @font-face
+    {
+        font-family: Poppins;
+        src: url("{{ url_for('static', filename='fonts/Poppins-Regular.ttf') }}");
+    }
+
+    @font-face
+    {
+        font-family: Poppins-Bold;
+        src: url("{{ url_for('static', filename='fonts/Poppins-Bold.ttf') }}");
+    }
+
+    @font-face
+    {
+        font-family: Raleway-Black;
+        src: url("{{ url_for('static', filename='fonts/Raleway-Black.ttf') }}");
+    }
+</style>
+<body>
+    <div class="prvastranostalo">
+        <header>
+            <a href="" class="logo">
+                <img src="../static/images/logosumica.png" alt="">
+                <p>ŠRC Šumica</p>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/">Domov</a></li>
+                    <li><a href="/onas">O nas</a></li>
+                    <li><a href="/ponudbe">Ponudbe</a></li>
+                    <li><a href="/galerija">Galerija</a></li>
+                    <li><a href="/kontakt">Kontakt</a></li>
+                    <li><a href="/lokacija"><i class="fa-solid fa-location-dot"></i></a></li>
+                </ul>
+            </nav>
+            <a href="/rezervacija" class="rezervacija">
+                <i class="fa-solid fa-calendar"></i>
+                <p>Rezervirajte</p>
+            </a>
+        </header>
+        <div class="textprvastranostalo">
+            <h1>PRAVNO</h1>
+            <h2>Vse pomembne pravne informacije, pogoji uporabe, varstvo podatkov in politika piškotkov na enem mestu</h2>
+        </div>
+    </div>
+
+    <div class="prvastranpravno">
+        <h1>Pogoji poslovanja</h1>
+
+        <p>
+            Ti splošni pogoji poslovanja urejajo uporabo spletne strani ter poslovni odnos med ponudnikom in uporabnikom.
+            Z uporabo spletne strani se strinjate z vsemi spodaj navedenimi pogoji.
+        </p>
+
+        <h2>1. Podatki o ponudniku</h2>
+        <p>
+            Naziv: Tadej Murko – ŠRC Šumica<br>
+            Naslov: Pristava 40a, 2282 Cirkulane, Slovenija
+        </p>
+
+        <h2>2. Splošno</h2>
+        <p>
+            Ponudnik si pridržuje pravico do spremembe vsebine spletne strani, cenikov in pogojev brez predhodnega obvestila.
+        </p>
+
+        <h2>3. Rezervacije in storitve</h2>
+        <p>
+            Rezervacije, oddane preko spletne strani, so zavezujoče. Uporabnik jamči za točnost vseh vnesenih podatkov.
+        </p>
+
+        <h2>4. Plačila</h2>
+        <p>
+            Plačilo storitev se izvede v skladu z dogovorjenimi pogoji.
+        </p>
+
+        <h2>5. Odpovedi in spremembe</h2>
+        <p>
+            Uporabnik lahko rezervacijo odpove ali spremeni v dogovorjenem roku.
+        </p>
+
+        <h2>6. Odgovornost</h2>
+        <p>
+            Ponudnik ne odgovarja za morebitno škodo, razen v primerih, določenih z zakonodajo.
+        </p>
+
+        <h2>7. Varstvo podatkov</h2>
+        <p>
+            Osebni podatki se obdelujejo skladno z veljavno zakonodajo.
+        </p>
+
+        <h2>8. Končne določbe</h2>
+        <p>
+            Za vse spore je pristojno sodišče v Republiki Sloveniji.
+        </p>
+    </div>
+
+    <div class="footer">
+        <div class="footernotri">
+            <footer>
+                <div class="footerskatlje">
+                    <h5>KONTAKTNI PODATKI</h5>
+                    <div class="footertext">
+                        <p>Tadej Murko | Dopolnilna dejavnost</p>
+                        <p>Pristava 40a</p>
+                        <p>2282 Cirkulane</p>
+                        <p><i class="fa-solid fa-phone"></i><span>+386 70 170 562</span></p>
+                        <p><i class="fa-solid fa-envelope"></i>tadej.murko1@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footerskatlje">
+                    <h5>SLEDITE NAM</h5>
+                    <div class="footertext">
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footerskatlje">
+                    <h5>PRAVNE INFORMACIJE</h5>
+                    <div class="footertext">
+                        <a href="/pogoji">Pogoji poslovanja</a>
+                        <a href="/piskotki">Piškotki</a>
+                        <a href="/varnost">Varnost in zasebnost</a>
+                    </div>
+                </div>
+            </footer>
+            <div class="noga">
+                <p>© 2025 ŠRC Šumica | Vse pravice pridržane</p>
+                <div class="desno">
+                    <a href="mailto:jure.pintar9@gmail.com">Izdelava spletne strani</a>
+                    <a href="/admin">Admin</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

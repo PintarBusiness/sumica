@@ -1164,6 +1164,7 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 {
     text-align: left;
     color: black;
+    font-family: Poppins-Bold;
 }
 
 .prijava .prijavanotri input
@@ -1340,9 +1341,14 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     color: #000 !important;
 }
 
+.prvastranrezervacije
+{
+    margin-top: 10em;
+}
+
 .prvastranrezervacije form
 {
-    width: 80%;
+    width: 60%;
     margin: 5em auto;
     font-family: Poppins;
 }
@@ -1412,4 +1418,48 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 .prvastranrezervacije form .step button
 {
     margin-top: 1em;
+}
+
+/* Pogoji, Piškotki, Varnost */
+
+.prvastranpravno,
+.prvastranpiskotki,
+.prvastranvarnost
+{
+    width: 80%;
+    margin-top: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 3em;
+    border-radius: 1.5em;
+    box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.2);
+    font-family: Poppins;
+}
+
+.prvastranpravno h1,
+.prvastranpiskotki h1,
+.prvastranvarnost h1
+{
+    font-family: Raleway-Black;
+    margin-bottom: 0.5em;
+}
+
+.prvastranpravno h2,
+.prvastranpiskotki h2,
+.prvastranvarnost h2
+{
+    font-family: Poppins-Bold;
+    color: #66952E;
+    margin-top: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+.prvastranpravno p,
+.prvastranpiskotki p,
+.prvastranvarnost p
+{
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #333;
 }

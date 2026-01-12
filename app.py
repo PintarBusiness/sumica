@@ -29,6 +29,18 @@ def galerija():
 def lokacija():
     return render_template("lokacija.html")
 
+@app.route("/pogoji")
+def pogoji():
+    return render_template("pogoji.html")
+
+@app.route("/piskotki")
+def piskotki():
+    return render_template("piskotki.html")
+
+@app.route("/varnost")
+def varnost():
+    return render_template("varnost.html")
+
 
 #Tukaj je flask za rezervacijo
 DATABASE = "rezervacije.db"
