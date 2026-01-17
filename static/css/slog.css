@@ -896,6 +896,140 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     font-family: Poppins-Bold;
 }
 
+.ponudbestran
+{
+    background-color: #F1F1F1;
+    padding: 10em 0;
+}
+
+.ponudbestrannotri
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+}
+
+.ponudba
+{
+    background-color: white;
+    display: flex;
+    height: 35em;
+    box-shadow: 0 2em 4em rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.ponudba:hover
+{
+    transform: scale(1.02);
+}
+
+.ponudba.obratno
+{
+    flex-direction: row-reverse;
+}
+
+.ponudbaslika
+{
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ponudbaslika img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.ponudba:hover .ponudbaslika img
+{
+    transform: scale(1.1);
+}
+
+.ponudbavsebina
+{
+    width: 55%;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ponudbanaslov
+{
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 1em;
+}
+
+.ponudbanaslov i
+{
+    font-size: 2.4em;
+    color: #66952E;
+}
+
+.ponudbanaslov h4
+{
+    margin: 0;
+    font-family: Raleway-Black;
+    font-size: 3em;
+    color: black;
+}
+
+.ponudbavsebina p
+{
+    font-size: 1.5em;
+    line-height: 1.6em;
+    margin-bottom: 1em;
+    color: #333;
+    max-width: 95%;
+}
+
+.ponudbavsebina h4 i
+{
+    font-size: 0.9em;
+    color: #66952E;
+}
+
+.gumbponudba
+{
+    margin-top: 1.5em;
+    background-color: #66952E;
+    padding: 1em 2em;
+    border-radius: 2.5em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8em;
+    width: fit-content;
+    transition: all 0.4s;
+}
+
+.gumbponudba i
+{
+    color: white;
+    font-size: 1.4em;
+}
+
+.gumbponudba span
+{
+    font-family: Poppins-Bold;
+    font-size: 1.5em;
+    color: white;
+}
+
+.gumbponudba:hover
+{
+    background-color: black;
+}
+
+
 /* GALERIJA */
 
 .prvastrangalerija
