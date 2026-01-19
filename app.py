@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, g, jsonify, redirect, url_for, request, flash
+from flask import Flask, render_template, request, g, jsonify, redirect, url_for, request, flash, session
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import sqlite3
 from dotenv import load_dotenv
@@ -91,6 +91,7 @@ def rezervacija():
     if request.method == "POST":
         data = request.form.to_dict()
 
+        # shranimo v bazo
         cursor.execute("""
             INSERT INTO rezervacije 
             (dogodek, datum, ura, ime, telefon, mail, osebe, podrobnosti)
@@ -107,13 +108,44 @@ def rezervacija():
         ))
         db.commit()
 
-        return "<h2>Rezervacija uspešna!</h2><p>Vaš termin je shranjen.</p>"
+        # pošlji mail
+        msg = Message(
+            subject="📅 Nova rezervacija termina",
+            recipients=[os.getenv("EMAIL_USER")],
+            body=f"""
+Dogodek: {data.get("dogodek")}
+Datum: {data.get("datum")}
+Ura: {data.get("ura")}
 
-    # Poberemo vse zasedene datume
+Ime: {data.get("ime")}
+Telefon: {data.get("telefon")}
+Mail: {data.get("mail")}
+Oseb: {data.get("osebe")}
+
+{data.get("podrobnosti")}
+"""
+        )
+        try:
+            mail.send(msg)
+        except Exception as e:
+            print("Napaka pri pošiljanju maila:", e)
+
+        # ⚡ flag v session
+        session['rezervacija_potrjena'] = True
+        return redirect(url_for("hvala"))
+
+    # GET – zasedeni datumi
     cursor.execute("SELECT datum FROM rezervacije")
     rezervirani = [row[0] for row in cursor.fetchall()]
-
     return render_template("rezervacija.html", rezervirani=rezervirani)
+
+@app.route("/hvala")
+def hvala():
+    if not session.get('rezervacija_potrjena'):
+        return redirect(url_for("rezervacija"))
+
+    session.pop('rezervacija_potrjena', None)
+    return render_template("hvala.html")
 
 #izbris rezervacij
 @app.route("/izbrisi_rezervacijo/<int:id>", methods=["POST"])
@@ -244,14 +276,26 @@ def kontakt():
 
         try:
             mail.send(msg)
-            flash("Sporočilo je bilo uspešno poslano!", "success")
+            # ⚡ flag v session
+            session['sporocilo_potrjeno'] = True
+            return redirect(url_for("prejeto"))
         except Exception as e:
-            print(e)
+            print("Napaka pri pošiljanju maila:", e)
             flash("Prišlo je do napake pri pošiljanju.", "danger")
-
-        return redirect(url_for("kontakt"))
+            return redirect(url_for("kontakt"))
 
     return render_template("kontakt.html")
+
+@app.route("/prejeto")
+def prejeto():
+    if not session.get('sporocilo_potrjeno'):
+        return redirect(url_for("kontakt"))
+
+    # odstranimo flag, da se sporočilo ne prikaže ob refreshu
+    session.pop('sporocilo_potrjeno', None)
+    return render_template("prejeto.html")
+
+
 
 
 

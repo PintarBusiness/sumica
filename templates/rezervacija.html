@@ -104,7 +104,7 @@
                 <br><br>
 
                 <label for="telefon">Telefonska številka:</label>
-                <input type="tel" id="telefon" name="telefon" required>
+                <input type="tel" id="telefon" name="telefon" required pattern="[0-9]{9,}" minlength="9">
                 <br><br>
 
                 <label for="mail">E-mail naslov:</label>
@@ -175,6 +175,14 @@
         return confirm("Ali ste prepričani, da želite potrditi rezervacijo?");
     }
     </script>
+
+    <script>
+    window.onload = function() {
+        const form = document.querySelector("form");
+        if(form) form.reset(); // počisti vsa polja ob naloženju strani
+    };
+    </script>
+
 
     <div class="footer">
         <div class="footernotri">

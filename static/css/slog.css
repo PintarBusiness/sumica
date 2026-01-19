@@ -1261,6 +1261,78 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     display: block;
 }
 
+/* Uspešna rezervacija */
+prvastranhvala
+{
+    background-color: #F1F1F1;
+    padding: 10em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.prvastranhvalanotri
+{
+    background-color: white;
+    width: 45%;
+    padding: 6em;
+    text-align: center;
+    box-shadow: 0 2em 4em rgba(0,0,0,0.15);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+}
+
+.hvalaikona i
+{
+    font-size: 6em;
+    color: #66952E;
+    margin-bottom: 0.5em;
+}
+
+.gumbnazaj
+{
+    margin-top: 1.5em;
+    background-color: #66952E;
+    padding: 1em 2em;
+    border-radius: 2.5em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8em;
+    width: fit-content;
+    transition: all 0.4s;
+}
+
+.gumbnazaj i
+{
+    color: white;
+    font-size: 1.4em;
+}
+
+.gumbnazaj p
+{
+    font-family: Poppins-Bold;
+    font-size: 1.5em;
+    color: white;
+}
+
+.gumbnazaj:hover
+{
+    background-color: black;
+}
+
+/*Prejeto*/
+.prvastranprejeto
+{
+    background-color: white;
+    width: 45%;
+    padding: 6em;
+    text-align: center;
+    box-shadow: 0 2em 4em rgba(0,0,0,0.15);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10em;
+}
+
 /*Prijava*/
 .prijava
 {
