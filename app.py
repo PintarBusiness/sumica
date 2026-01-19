@@ -266,7 +266,7 @@ def kontakt():
 
         # sestavimo email
         msg = Message(
-            subject=f"Kontaktno sporočilo od {ime}",
+            subject=f"☎️ Kontaktno sporočilo od {ime}",
             recipients=[os.getenv("EMAIL_USER")],  # tvoj email
             body=f"Ime in priimek: {ime}\n"
                  f"Telefon: {telefon}\n"
