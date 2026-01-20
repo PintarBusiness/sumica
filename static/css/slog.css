@@ -672,6 +672,278 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
     100% { transform: translate(0, 0); }
 }
 
+@media (max-width: 900px) {
+
+    /* -------- GLOBAL -------- */
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* -------- HEADER -------- */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 1.5em 2em; /* isto kot logo od leve */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        z-index: 2000;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header .logo img {
+        width: 6em;
+    }
+
+    /* -------- NAV -------- */
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        border-top: 0.1em solid #eee;
+        z-index: 1500;
+    }
+
+    header nav.active {
+        max-height: 50em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 3em;
+        padding: 4em 0;
+    }
+
+    header nav ul li a {
+        font-size: 2.4em;
+    }
+
+    /* -------- REZERVACIJA GUMB -------- */
+    /* -------- REZERVACIJA GUMB - MOBILE -------- */
+    header .rezervacija {
+        display: flex;
+        position: absolute;
+        top: 50%;                 /* vertikalno centrirano glede na header */
+        transform: translateY(-50%);
+        right: 6.5em;             /* odmik od hamburgerja, da bo vmes */
+        background-color: #66952E;
+        padding: 0.5em 0.9em;     /* manjši padding */
+        border-radius: 2em;
+        gap: 0.4em;
+        font-size: 1.2em;         /* manjši font */
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    header .rezervacija:hover {
+        background-color: black;
+    }
+
+    header .rezervacija i {
+        font-size: 1.2em;         /* manjša ikona */
+    }
+
+    header .rezervacija p {
+        font-size: 1.1em;         /* manjši tekst */
+        margin: 0;
+    }
+
+    /* -------- HAMBURGER -------- */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.6em;
+        cursor: pointer;
+        margin-right: 2em; /* odmik od desnega roba */
+    }
+
+    .hamburger span {
+        width: 3em;
+        height: 0.3em;
+        background-color: black;
+        border-radius: 1em;
+        transition: all 0.4s ease;
+        transform-origin: center;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(0.9em) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-0.9em) rotate(-45deg);
+    }
+
+    /* -------- HERO / PRVA STRAN -------- */
+    .prvastranindex {
+        padding-top: 13em;
+        padding-bottom: 14em;
+        background-position: center;
+        height: auto;
+    }
+
+    .prvastranindex .textprvastranindex {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .prvastranindex h2 {
+        font-size: 2em; /* manjši, da se vse prilega */
+        line-height: 1.3;
+        max-width: 80%;
+        word-break: break-word;
+        margin-bottom: 0.5em;
+    }
+
+    .prvastranindex h1 {
+        font-size: 5em;
+        margin-bottom: -0.5em;
+    }
+
+    /* -------- HERO / PRVA STRAN – KOMPATNA GUMBA -------- */
+    .prvastranindex .kontaktirajte {
+        margin-top: 1.2em;        /* malo manjši vrhnji razmik */
+        padding: 0.5em 0.9em;     /* manjši padding */
+        font-size: 0.9em;         /* manjši font */
+        gap: 0.4em;               /* manjši razmik med ikono in tekstom */
+        display: flex;
+        align-items: center;
+        border-radius: 2em;
+        transition: all 0.3s ease;
+    }
+
+    .prvastranindex .kontaktirajte i {
+        font-size: 1.2em;         /* manjša ikona */
+    }
+
+    .prvastranindex .kontaktirajte p {
+        font-size: 1.1em;         /* manjši tekst */
+        margin: 0;
+    }
+
+    /* -------- DRUGA STRAN – KARTICE -------- */
+    .drugastranindex .skatlje {
+        flex-direction: column;
+        gap: 3.5em; /* vrnjen original razmak */
+    }
+
+    .drugastranindex .skatlje .skatlja {
+        width: 100%;
+        height: auto;
+        margin-top: 0 !important;
+    }
+
+    /* -------- ČETRTA STRAN – OPISI -------- */
+    .cetrtastranindexnotri {
+        margin-top: 10em;
+        margin-bottom: 25em;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cetrtastranindexnotri .opisindex {
+        flex-direction: column;
+        gap: 5em;
+    }
+
+    .cetrtastranindexnotri .opisindex .textopisi h4 {
+        font-size: 2.2em;
+        margin-bottom: 1em;
+    }
+
+    .cetrtastranindexnotri .opisindex .textopisi p {
+        font-size: 1.3em;
+        line-height: 1.5;
+        margin-bottom: 1.5em;
+    }
+
+    .cetrtastranindexnotri .opisindex .punudbegumb {
+        margin-top: 1.5em;
+    }
+
+    .cetrtastranindexnotri .opisindex .slikeopisi {
+        flex-direction: column;
+        gap: 3.5em;
+    }
+
+    .opisislika {
+        width: 100%;
+        height: auto;
+        position: relative !important;
+        margin: 0 !important;
+        animation: none !important;
+        border: none !important;
+    }
+
+    .opisislikaslika img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+    }
+
+    /* -------- TRETJA STRAN – TRAK -------- */
+    .trak {
+        gap: 3.5em;
+        font-size: 1.5em;
+    }
+
+    /* -------- FOOTER -------- */
+    footer {
+        flex-direction: column;
+        gap: 3em;
+        padding: 3em 2em;
+    }
+
+    .footernotri {
+        width: 95%;
+    }
+
+    .footernotri .noga {
+        flex-direction: column;
+        gap: 1.5em;
+        text-align: center;
+        padding: 2em 0;
+    }
+
+    .footernotri .noga .desno {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+
 /*Prva stran ostalo*/
 .prvastranostalo
 {

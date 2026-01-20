@@ -43,7 +43,7 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="/">Domov</a></li>
+                    <li><a href="/" class="active">Domov</a></li>
                     <li><a href="/onas">O nas</a></li>
                     <li><a href="/ponudbe">Ponudbe</a></li>
                     <li><a href="/galerija">Galerija</a></li>
@@ -51,6 +51,32 @@
                     <li><a href="/lokacija"><i class="fa-solid fa-location-dot"></i></a></li>
                 </ul>
             </nav>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <script>
+            const hamburger = document.querySelector(".hamburger");
+            const nav = document.querySelector("header nav");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                nav.classList.toggle("active");
+            });
+
+            // zapri meni ob kliku na link
+            document.querySelectorAll("header nav a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburger.classList.remove("active");
+                    nav.classList.remove("active");
+                });
+            });
+            </script>
+
+
             <a href="/rezervacija" class="rezervacija">
                 <i class="fa-solid fa-calendar"></i>
                 <p>Rezervirajte</p>
