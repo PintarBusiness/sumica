@@ -675,21 +675,25 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
 @media (max-width: 900px) {
 
     /* -------- GLOBAL -------- */
-    html {
+    html
+    {
         font-size: 62.5%;
         overflow-x: hidden;
     }
 
-    body {
+    body
+    {
         overflow-x: hidden;
     }
 
-    * {
+    *
+    {
         box-sizing: border-box;
     }
 
     /* -------- HEADER -------- */
-    header {
+    header
+    {
         position: fixed;
         top: 0;
         left: 0;
@@ -703,18 +707,21 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         z-index: 2000;
     }
 
-    header .logo {
+    header .logo
+    {
         display: flex;
         align-items: center;
         gap: 1em;
     }
 
-    header .logo img {
+    header .logo img
+    {
         width: 6em;
     }
 
     /* -------- NAV -------- */
-    header nav {
+    header nav
+    {
         position: absolute;
         top: 100%;
         left: 0;
@@ -727,24 +734,28 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         z-index: 1500;
     }
 
-    header nav.active {
+    header nav.active
+    {
         max-height: 50em;
     }
 
-    header nav ul {
+    header nav ul
+    {
         flex-direction: column;
         align-items: center;
         gap: 3em;
         padding: 4em 0;
     }
 
-    header nav ul li a {
+    header nav ul li a
+    {
         font-size: 2.4em;
     }
 
     /* -------- REZERVACIJA GUMB -------- */
     /* -------- REZERVACIJA GUMB - MOBILE -------- */
-    header .rezervacija {
+    header .rezervacija
+    {
         display: flex;
         position: absolute;
         top: 50%;                 /* vertikalno centrirano glede na header */
@@ -759,21 +770,25 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         transition: all 0.3s ease;
     }
 
-    header .rezervacija:hover {
+    header .rezervacija:hover
+    {
         background-color: black;
     }
 
-    header .rezervacija i {
+    header .rezervacija i
+    {
         font-size: 1.2em;         /* manjša ikona */
     }
 
-    header .rezervacija p {
+    header .rezervacija p
+    {
         font-size: 1.1em;         /* manjši tekst */
         margin: 0;
     }
 
     /* -------- HAMBURGER -------- */
-    .hamburger {
+    .hamburger
+    {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -782,7 +797,8 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         margin-right: 2em; /* odmik od desnega roba */
     }
 
-    .hamburger span {
+    .hamburger span
+    {
         width: 3em;
         height: 0.3em;
         background-color: black;
@@ -791,33 +807,39 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         transform-origin: center;
     }
 
-    .hamburger.active span:nth-child(1) {
+    .hamburger.active span:nth-child(1)
+    {
         transform: translateY(0.9em) rotate(45deg);
     }
 
-    .hamburger.active span:nth-child(2) {
+    .hamburger.active span:nth-child(2)
+    {
         opacity: 0;
     }
 
-    .hamburger.active span:nth-child(3) {
+    .hamburger.active span:nth-child(3)
+    {
         transform: translateY(-0.9em) rotate(-45deg);
     }
 
     /* -------- HERO / PRVA STRAN -------- */
-    .prvastranindex {
+    .prvastranindex
+    {
         padding-top: 13em;
         padding-bottom: 14em;
         background-position: center;
         height: auto;
     }
 
-    .prvastranindex .textprvastranindex {
+    .prvastranindex .textprvastranindex
+    {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .prvastranindex h2 {
+    .prvastranindex h2
+    {
         font-size: 2em; /* manjši, da se vse prilega */
         line-height: 1.3;
         max-width: 80%;
@@ -825,13 +847,15 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         margin-bottom: 0.5em;
     }
 
-    .prvastranindex h1 {
+    .prvastranindex h1
+    {
         font-size: 5em;
         margin-bottom: -0.5em;
     }
 
     /* -------- HERO / PRVA STRAN – KOMPATNA GUMBA -------- */
-    .prvastranindex .kontaktirajte {
+    .prvastranindex .kontaktirajte
+    {
         margin-top: 1.2em;        /* malo manjši vrhnji razmik */
         padding: 0.5em 0.9em;     /* manjši padding */
         font-size: 0.9em;         /* manjši font */
@@ -842,88 +866,180 @@ footer .footerskatlje:nth-child(3) .footertext a:hover
         transition: all 0.3s ease;
     }
 
-    .prvastranindex .kontaktirajte i {
+    .prvastranindex .kontaktirajte i
+    {
         font-size: 1.2em;         /* manjša ikona */
     }
 
-    .prvastranindex .kontaktirajte p {
+    .prvastranindex .kontaktirajte p
+    {
         font-size: 1.1em;         /* manjši tekst */
         margin: 0;
     }
 
-    /* -------- DRUGA STRAN – KARTICE -------- */
-    .drugastranindex .skatlje {
-        flex-direction: column;
-        gap: 3.5em; /* vrnjen original razmak */
-    }
 
-    .drugastranindex .skatlje .skatlja {
-        width: 100%;
-        height: auto;
-        margin-top: 0 !important;
-    }
 
-    /* -------- ČETRTA STRAN – OPISI -------- */
-    .cetrtastranindexnotri {
-        margin-top: 10em;
-        margin-bottom: 25em;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    /* ===================== */
+/* SPLOŠNI NASLOVI */
+/* ===================== */
 
-    .cetrtastranindexnotri .opisindex {
-        flex-direction: column;
-        gap: 5em;
-    }
+h3 {
+    font-size: 3.2em;
+    text-align: center;
+}
 
-    .cetrtastranindexnotri .opisindex .textopisi h4 {
-        font-size: 2.2em;
-        margin-bottom: 1em;
-    }
+h4 {
+    font-size: 2.6em;
+}
 
-    .cetrtastranindexnotri .opisindex .textopisi p {
-        font-size: 1.3em;
-        line-height: 1.5;
-        margin-bottom: 1.5em;
-    }
+h5 {
+    font-size: 2em;
+}
 
-    .cetrtastranindexnotri .opisindex .punudbegumb {
-        margin-top: 1.5em;
-    }
+p {
+    font-size: 1.4em;
+    line-height: 1.6;
+}
 
-    .cetrtastranindexnotri .opisindex .slikeopisi {
-        flex-direction: column;
-        gap: 3.5em;
-    }
+/* ===================== */
+/* DRUGA STRAN – LETNI ČASI */
+/* ===================== */
 
-    .opisislika {
-        width: 100%;
-        height: auto;
-        position: relative !important;
-        margin: 0 !important;
-        animation: none !important;
-        border: none !important;
-    }
+.drugastranindexnotri {
+    width: 80%;
+    margin: 6em auto 0 auto; /* center + odmik zgoraj */
+}
 
-    .opisislikaslika img {
-        position: relative;
-        width: 100%;
-        height: auto;
-        top: 0;
-    }
+.drugastranindex .skatlje {
+    flex-direction: column;
+    gap: 4em;
+}
 
-    /* -------- TRETJA STRAN – TRAK -------- */
-    .trak {
-        gap: 3.5em;
-        font-size: 1.5em;
-    }
+.drugastranindex .skatlje .skatlja {
+    width: 100%;
+    height: auto;
+    margin-top: 0 !important;
+}
+
+.drugastranindex .skatlje .skatlja:hover {
+    scale: 1;
+}
+
+.drugastranindex .skatlje .skatlja .zgorajskatlja {
+    height: 22em;
+}
+
+.drugastranindex .ozadjeskatlje {
+    height: 30%;
+}
+
+/* ===================== */
+/* TRETJA STRAN – TRAK */
+/* ===================== */
+
+.trakkontejner {
+    padding: 3em 0;
+}
+
+.trak {
+    gap: 5em;
+    font-size: 1.6em;
+}
+
+/* ===================== */
+/* ČETRTA STRAN – OPIS */
+/* ===================== */
+
+.cetrtastranindexnotri {
+    width: 80%;
+    margin: 6em auto 10em auto; /* center */
+}
+
+.cetrtastranindexnotri .opisindex {
+    flex-direction: column;
+    gap: 0em;
+    margin-top: 4em;
+}
+
+.cetrtastranindexnotri .opisindex .textopisi {
+    margin-top: 0;
+}
+
+.cetrtastranindexnotri .opisindex .punudbegumb {
+    padding: 0.6em 1em;
+    gap: 0.5em;
+}
+
+.cetrtastranindexnotri .opisindex .punudbegumb i {
+    font-size: 1.3em;
+}
+
+.cetrtastranindexnotri .opisindex .punudbegumb p {
+    font-size: 1.2em;
+}
+
+/* --- slike opisov --- */
+
+.cetrtastranindexnotri .opisindex .slikeopisi {
+    margin-top: -15em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika {
+    position: static !important;
+    width: 100%;
+    margin: 0 auto;
+    /* reset desktop trikov */
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislikaslika {
+    position: static !important;
+    width: 100%;
+    height: 22em;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislikaslika img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+.cetrtastranindexnotri .opisindex .slikeopisi .opisislika .opisislikatext {
+    height: auto;
+    overflow: visible;
+}
+
+.tretjastranindex
+{
+    margin-top: 0;
+}
+
+
 
     /* -------- FOOTER -------- */
     footer {
         flex-direction: column;
         gap: 3em;
-        padding: 3em 2em;
+        padding: 3em 10%;
     }
 
     .footernotri {
