@@ -1064,10 +1064,10 @@ p {
 .prvastranostalo
 {
     height: 60vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/glavnoozadje.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/ostaloglavnoozadje.jpg);
     background-color: black;
     background-size: cover;
-    background-position: 0% 70%;
+    background-position: 0% 40%;
     overflow: hidden;
 }
 
