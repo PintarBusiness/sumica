@@ -913,6 +913,7 @@ p {
 .drugastranindex .skatlje {
     flex-direction: column;
     gap: 4em;
+    margin-top: 10em;
 }
 
 .drugastranindex .skatlje .skatlja {
@@ -930,7 +931,7 @@ p {
 }
 
 .drugastranindex .ozadjeskatlje {
-    height: 30%;
+    height: 85%;
 }
 
 /* ===================== */
@@ -992,7 +993,8 @@ p {
     position: static !important;
     width: 100%;
     margin: 0 auto;
-    /* reset desktop trikov */
+    height: 50em;
+    overflow: visible !important;
     left: auto !important;
     right: auto !important;
     top: auto !important;
@@ -1005,7 +1007,8 @@ p {
     position: static !important;
     width: 100%;
     height: 22em;
-
+    height: auto;
+    overflow: visible;
     left: auto !important;
     right: auto !important;
     transform: none !important;
@@ -1016,7 +1019,6 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     position: static !important;
     left: auto !important;
     right: auto !important;
@@ -1026,6 +1028,7 @@ p {
 .cetrtastranindexnotri .opisindex .slikeopisi .opisislika .opisislikatext {
     height: auto;
     overflow: visible;
+    padding-bottom: 2.5em;
 }
 
 .tretjastranindex
@@ -1283,6 +1286,8 @@ p {
     font-size: 1.5em;
     font-family: Poppins-Bold;
 }
+
+/* Ponudbe */
 
 .ponudbestran
 {
@@ -2057,3 +2062,258 @@ prvastranhvala
     line-height: 1.6;
     color: #333;
 }
+
+/* ZA TELEFON OSTALO KAR NI INDEX */
+
+@media (max-width: 900px) {
+
+    /* ===================== */
+    /* GLOBAL – 80 % ŠIRINE */
+    /* ===================== */
+
+    .prvastranostalo .textprvastranostalo,
+    .drugastranonas,
+    .tretjastranonas,
+    .cetrtastranonas {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    /* ===================== */
+    /* HERO – O NAS */
+    /* ===================== */
+
+    .prvastranostalo {
+        height: auto;
+        padding: 12em 0 8em 0;
+        background-position: center;
+    }
+
+    .prvastranostalo h1,
+    .prvastranostalo h2,
+    .prvastranostalo p {
+        text-align: left;
+    }
+
+    .prvastranostalo h2
+    {
+        font-size: 1.5em;
+        line-height: 1.3;
+        max-width: 80%;
+        word-break: break-word;
+    }
+
+    .prvastranostalo h1
+    {
+        font-size: 4em;
+        margin-bottom: 0.5em;
+    }
+
+    /* ===================== */
+    /* KDO SMO */
+    /* ===================== */
+
+    .drugastranonas {
+        margin-top: 6em;
+    }
+
+    .drugastranonas .drugastranonasnotri {
+        flex-direction: column;
+        gap: 3em;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .drugastranonas .drugastranonasnotri img {
+        width: 100%;
+        height: auto;
+        max-height: 22em;
+        object-fit: cover;
+    }
+
+    .drugastranonas .textdrugastraonas h4 {
+        font-size: 2.6em;
+    }
+
+    .drugastranonas .textdrugastraonas p {
+        font-size: 1.4em;
+        line-height: 1.6;
+    }
+
+    .socialnaomrezjaonas {
+        justify-content: flex-start;
+    }
+
+    /* ===================== */
+    /* ZAPOSLENI / EKIPA */
+    /* ===================== */
+
+    .ozadjeekipa {
+        top: 160em;
+        height: 155%;
+    }
+
+    .tretjastranonasnotri .skatlaslik .slikeopisi:nth-child(1),
+    .tretjastranonasnotri .skatlaslik .slikeopisi:nth-child(3)
+    {
+        margin-top: 0;
+    }
+
+
+    .tretjastranonasnotri {
+        width: 100%;
+    }
+
+    .tretjastranonasnotri .skatlaslik {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tretjastranonasnotri .skatlaslik .slikeopisi {
+        width: 100%;
+        max-width: none;
+        height: 40em;
+        margin: 0;
+    }
+
+    .tretjastranonasnotri .skatlaslik .slikeopisi:hover {
+        scale: 1;
+    }
+
+    /* ===================== */
+    /* MUSTROVA POT */
+    /* ===================== */
+
+    .cetrtastranonas {
+        margin-top: 10em;
+    }
+
+    .cetrtastranonas .cetrtastranonasnotri {
+        flex-direction: column;
+        gap: 3em;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .cetrtastranonas .cetrtastranonasnotri img {
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+    }
+
+    .cetrtastranonas .textcetrtastranonas h4 {
+        font-size: 2.6em;
+    }
+
+    .cetrtastranonas .textcetrtastranonas p {
+        font-size: 1.4em;
+        line-height: 1.6;
+    }
+
+    .cetrtastranonas .mustrovagumb {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    /* ===================== */
+    /* NASLOVI – brez h3 */
+    /* ===================== */
+
+    h1, h2, h4, h5, h6 {
+        text-align: left;
+    }
+
+}
+
+/* Za telefon ponudbe /*
+
+/* ========== PONUDBE - MOBILNI STIL ========== */
+@media (max-width: 900px) {
+
+    /* Ponudbe stran */
+    .ponudbestrannotri {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 10em;
+    }
+
+    .ponudba {
+        flex-direction: column !important;
+        height: auto;
+        box-shadow: 0 1em 2em rgba(0,0,0,0.15);
+    }
+
+    .ponudba.obratno {
+        flex-direction: column !important;
+    }
+
+    .ponudbaslika {
+        width: 100%;
+        height: 20em;
+    }
+
+    .ponudbaslika img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ponudbavsebina {
+        width: 100%;
+        padding: 2em 1.5em;
+    }
+
+    .ponudbavsebina h4 {
+        font-size: 2em;
+    }
+
+    .ponudbavsebina p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+
+    .gumbponudba {
+        font-size: 1.2em;
+        padding: 0.8em 1.5em;
+    }
+
+    .gumbponudba i {
+        font-size: 1.2em;
+    }
+
+    .gumbponudba span {
+        font-size: 1.2em;
+    }
+}
+
+/* Za telefon galerija */
+
+@media (max-width: 900px) {
+
+    /* Galerija */
+    .prvastrangalerijanotri {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr; /* vsaka slika v svoji vrstici */
+        gap: 1em;
+    }
+
+    .prvastrangalerijanotri .slikabox {
+        width: 100%;
+        height: 18em; /* lahko tudi auto, če želiš ohraniti razmerje slike */
+    }
+
+    .prvastrangalerijanotri .slikabox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+    }
+
+}
+
