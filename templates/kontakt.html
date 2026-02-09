@@ -119,7 +119,31 @@
         </div>
     </div>
 
-    
+    <script>
+(function () {
+    const premakniGumb = () => {
+        const gumb = document.querySelector(".kontaktgumb");
+        const desno = document.querySelector(".kontaktdesno");
+        const levo = document.querySelector(".kontaktlevo");
+
+        if (!gumb || !desno || !levo) return;
+
+        if (window.innerWidth <= 768) {
+            if (!desno.contains(gumb)) {
+                desno.appendChild(gumb);
+            }
+        } else {
+            if (!levo.contains(gumb)) {
+                levo.appendChild(gumb);
+            }
+        }
+    };
+
+    window.addEventListener("load", premakniGumb);
+    window.addEventListener("resize", premakniGumb);
+})();
+</script>
+
 
 
     <div class="footer">

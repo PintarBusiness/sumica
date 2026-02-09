@@ -2317,7 +2317,6 @@ prvastranhvala
 
 }
 
-/* Za telefon kontakt */
 /* =========================
    MOBILNI PRIKAZ – KONTAKT
    ========================= */
@@ -2325,7 +2324,6 @@ prvastranhvala
 
     .prvastrankontakt {
         margin-top: 4em;
-        padding: 0; /* brez dodatnega roba */
     }
 
     .prvastrankontaktnotri {
@@ -2340,7 +2338,8 @@ prvastranhvala
     }
 
     .kontaktgrid {
-        grid-template-columns: 1fr; /* ena kolona */
+        display: flex;
+        flex-direction: column;
         gap: 1.5em;
     }
 
@@ -2367,6 +2366,7 @@ prvastranhvala
         font-size: 1.3em;
     }
 }
+
 
 /* Za telefon Amin */
 /* =========================
