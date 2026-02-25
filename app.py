@@ -6,6 +6,7 @@ import os
 from flask_mail import Mail, Message
 
 # pip install -r requirements.txt
+# python3 app.py
 
 app = Flask(__name__)
 
