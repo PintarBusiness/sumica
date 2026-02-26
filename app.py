@@ -44,7 +44,8 @@ def varnost():
 
 
 #Tukaj je flask za rezervacijo
-DATABASE = "rezervacije.db"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "rezervacije.db")
 
 
 # --- Povezava z bazo ---
@@ -302,4 +303,4 @@ def prejeto():
 
 if __name__ == "__main__":
     init_db()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
