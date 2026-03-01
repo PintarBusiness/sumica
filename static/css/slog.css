@@ -1655,7 +1655,7 @@ p {
 }
 
 /* Uspešna rezervacija */
-prvastranhvala
+.prvastranhvala
 {
     background-color: #F1F1F1;
     padding: 10em 0;
@@ -2400,5 +2400,86 @@ prvastranhvala
 
 }
 
+/* ========== PREJETO - MOBILNI STIL ========== */
+@media (max-width: 900px) {
 
+    .prvastranprejeto {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 6em;
+        margin-bottom: 6em;
+        padding: 3em 2em;
+        box-shadow: 0 1em 2em rgba(0,0,0,0.15);
+    }
+
+    .prvastranprejeto h4 {
+        font-size: 2em;
+        margin-bottom: 0.8em;
+    }
+
+    .gumbnazaj {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6em;
+        font-size: 1.2em;
+        padding: 0.8em 1.5em;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gumbnazaj i {
+        font-size: 1.2em;
+    }
+
+    .gumbnazaj p {
+        font-size: 1.2em;
+    }
+}
+
+
+/* ========== HVALA - MOBILNI STIL ========== */
+@media (max-width: 900px) {
+
+    .prvastranhvala {
+        padding: 6em 0;
+    }
+
+    .prvastranhvalanotri {
+        width: 80%;
+        padding: 3em 2em;
+        margin-top: 4em;
+        box-shadow: 0 1em 2em rgba(0,0,0,0.15);
+    }
+
+    .hvalaikona i {
+        font-size: 4em;
+        margin-bottom: 0.6em;
+    }
+
+    .prvastranhvalanotri h4 {
+        font-size: 2em;
+        margin-bottom: 0.8em;
+    }
+
+    .prvastranhvalanotri p {
+        font-size: 1.2em;
+    }
+
+    .gumbnazaj {
+        font-size: 1.2em;
+        padding: 0.8em 2em;
+        margin-top: 1.5em;
+    }
+
+    .gumbnazaj i {
+        font-size: 1.2em;
+    }
+
+    .gumbnazaj p {
+        font-size: 1.2em;
+    }
+}
 
