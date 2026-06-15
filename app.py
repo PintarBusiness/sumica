@@ -301,6 +301,8 @@ def prejeto():
 
 
 
+# init_db se mora klicati vedno – tudi ko gunicorn zažene app (ne samo __main__)
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     app.run()
